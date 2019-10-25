@@ -3,27 +3,57 @@
 .SectionDirections {
   position: relative;
 
-  ul {
-    list-style: none;
-    padding: 3px;
-    margin: 0;
-
-    li {
-      &::before {
-        display: inline-block;
-        content: '—';
-      }
-    }
+  &__h2 {
+    margin-bottom: 35px;
   }
 
-  p {
-    font-size: 16px;
-    padding: 5px 0 10px 22px;
-    color: $gray-700;
+  &__title-grey {
+    @include title-overlay();
   }
 
+  &__title-white {
+    @include title-overlay($white);
+  }
 
   &__bg {
     @include bg-skew(#f4f3f9);
+    margin: 100px 0px;
   }
+
+  &__section-crypto {
+    padding: 53px 0px 26px;
+  }
+
+
+  &__section-api {
+    padding: 40px 0px 90px;
+  }
+
+
+  &__white-list {
+    padding-right: 60px;
+
+    .List__title {
+      @include title-overlay();
+    }
+  }
+
+  &__grey-list {
+    padding-left: 40px;
+
+    .List__title {
+      @include title-overlay($white);
+    }
+  }
+
+  .List__item-description:not(:last-child) {
+    color: $gray-700;
+  }
+
+  .ProjectCard:not(:last-child) {
+    margin-bottom: 30px;
+
+  }
+
+
 }

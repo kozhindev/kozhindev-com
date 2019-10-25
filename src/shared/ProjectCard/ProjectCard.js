@@ -18,11 +18,13 @@ export default class ProjectCard extends React.PureComponent {
     render() {
         return (
             <div className={bem.block({name: this.props.name})}>
-                <h3 className={bem.element('title')}>
-                    {this.props.title}
-                </h3>
-                <div className={bem.element('description')}>
-                    {this.props.description}
+                <div className={bem.element('body')}>
+                    <h3 className={bem.element('title')}>
+                        {this.props.title}
+                    </h3>
+                    <div className={bem.element('description')}>
+                        {this.props.description}
+                    </div>
                 </div>
             </div>
         );

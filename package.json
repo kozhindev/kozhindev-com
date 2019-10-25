@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "react-google-maps": "^9.4.5",
     "three": "^0.56.7",
     "yii-steroids": "^1.12.1"
   },
