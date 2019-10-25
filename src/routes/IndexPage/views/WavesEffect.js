@@ -131,7 +131,7 @@ export default class WavesEffect extends React.Component {
         this._camera.updateProjectionMatrix();
 
         this._renderer.setSize(window.innerWidth, window.innerHeight);
-        this._animate();
+        //this._animate();
         this._onWindowScroll();
     }
 

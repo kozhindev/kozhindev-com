@@ -1,8 +1,8 @@
-import React from 'react';
-
 import IndexPage from './IndexPage';
+import ContactPage from 'routes/ContactPage';
 
 export const ROUTE_ROOT = 'root';
+export const ROUTE_CONTACT = 'contact';
 
 export default {
     id: ROUTE_ROOT,
@@ -10,4 +10,12 @@ export default {
     path: '/',
     component: IndexPage,
     label: __('KozhinDev'),
+    items: {
+        [ROUTE_CONTACT]: {
+            exact: true,
+            path: '/contact',
+            component: ContactPage,
+            label: __('Контакты'),
+        }
+    }
 };

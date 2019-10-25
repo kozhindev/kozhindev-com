@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom';
 import {Provider} from 'react-redux';
 
 import './style/index.scss';
-import './favicon.ico';
 
 (init => {
     if (window.Raven && process.env.NODE_ENV === 'production') {

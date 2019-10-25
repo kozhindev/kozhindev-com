@@ -1,6 +1,10 @@
 @import "style/variables";
 
+$shortEffect: .25s ease-in;
+
 .Layout {
+  padding-top: 60px;
+
   &__header {
     position: fixed;
     top: 0;
@@ -13,12 +17,16 @@
       display: flex;
       flex-direction: row;
       justify-content: space-between;
+      transition: padding $shortEffect;
 
       > * {
         position: relative;
         z-index: 2;
       }
     }
+  }
+  &_short &__header > .container {
+    padding: 5px 0;
   }
 
   &__header-bg {
@@ -29,6 +37,10 @@
     height: 110px;
     overflow: hidden;
     z-index: 1;
+    transition: height $shortEffect;
+  }
+  &_short &__header-bg {
+    height: 60px;
   }
 
   &__header-logo {
@@ -36,6 +48,7 @@
     font-family: 'Ubuntu', $font-family-sans-serif;
     font-weight: 500;
     color: #fff !important;
+    transition: font-size $shortEffect;
 
     &, &:hover {
       text-decoration: none;
@@ -52,10 +65,19 @@
       margin-right: 15px;
       background-color: rgba(0, 0, 0, .1);
       content: '<)';
+      transition: width $shortEffect, height $shortEffect;
     }
 
     &:hover::before {
       content: '=)';
+    }
+  }
+  &_short &__header-logo {
+    font-size: 24px;
+
+    &::before {
+      width: 50px;
+      height: 50px;
     }
   }
 
@@ -63,7 +85,6 @@
     display: flex;
     flex-direction: row;
     margin-bottom: 0;
-
 
     > li {
       list-style: none;
@@ -74,7 +95,7 @@
         display: inline-block;
         color: #fff;
         background-color: rgba(0, 0, 0, 0);
-        transition: background-color .1s ease-in-out;
+        transition: background-color $shortEffect, padding $shortEffect, font-size $shortEffect;
 
         &:hover {
           background-color: rgba(0, 0, 0, .1);
@@ -82,15 +103,24 @@
       }
     }
   }
+  &_short &__header-nav > li > a {
+    padding: 13px 15px;
+    font-size: 16px;
+  }
+
   &__header-nav > &__header-nav-button {
     > a {
       text-transform: uppercase;
       background-color: rgba($pink, .5);
+      transition: padding $shortEffect;
 
       &:hover {
         background-color: rgba($pink, 1);
       }
     }
+  }
+  &_short &__header-nav > &__header-nav-button > a {
+    padding: 13px 15px;
   }
 
   &__content {
