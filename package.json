@@ -1,0 +1,13 @@
+{
+  "name": "kozhindev-com",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "three": "^0.56.7",
+    "yii-steroids": "^1.12.1"
+  },
+  "scripts": {
+    "start": "node webpack",
+    "build": "node webpack production"
+  }
+}

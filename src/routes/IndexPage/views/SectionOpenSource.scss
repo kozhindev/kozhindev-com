@@ -1,0 +1,11 @@
+@import "style/variables";
+
+.SectionOpenSource {
+  position: relative;
+  z-index: 10;
+  padding: 0 25px 50px;
+
+  > h2 {
+    margin-bottom: 40px;
+  }
+}

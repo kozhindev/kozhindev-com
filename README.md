@@ -1,2 +1,2 @@
-# kozhindev-com
-Source of the website kozhindev.com
+# KozhinDev.com
+Source of the website [kozhindev.com](https://kozhindev.com)

@@ -1,0 +1,45 @@
+@import '~bootstrap/scss/mixins';
+@import '~bootstrap/scss/functions';
+@import '../variables';
+
+@mixin button-variant-custom($color, $color-hover: color-yiq($color), $active-background: $color, $active-border: $color) {
+  color: $white;
+  border-color: $color;
+  background-color: $active-background;
+  border-radius: 18px;
+
+  @include hover {
+    color: $white;
+    background-color: rgba($active-background, .5);
+    border-color: $active-border;
+  }
+
+  &:focus,
+  &.focus {
+    background-color: rgba($active-background, .1);
+    box-shadow: 0 0 0 $btn-focus-width rgba($color, .5);
+  }
+
+  &.disabled,
+  &:disabled {
+    color: $color;
+    background-color: transparent;
+  }
+
+  &:not(:disabled):not(.disabled):active,
+  &:not(:disabled):not(.disabled).active,
+  .show > &.dropdown-toggle {
+    background-color: rgba($active-background, .2);
+    border-color: $active-border;
+
+    &:focus {
+      box-shadow: $btn-active-box-shadow, 0 0 0 $btn-focus-width rgba($color, .5);
+    }
+  }
+}
+
+@each $color, $value in $theme-colors {
+  .btn-#{$color} {
+    @include button-variant-custom($value, $value);
+  }
+}

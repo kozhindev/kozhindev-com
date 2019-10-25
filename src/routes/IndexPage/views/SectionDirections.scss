@@ -1,0 +1,29 @@
+@import "style/variables";
+
+.SectionDirections {
+  position: relative;
+
+  ul {
+    list-style: none;
+    padding: 3px;
+    margin: 0;
+
+    li {
+      &::before {
+        display: inline-block;
+        content: '—';
+      }
+    }
+  }
+
+  p {
+    font-size: 16px;
+    padding: 5px 0 10px 22px;
+    color: $gray-700;
+  }
+
+
+  &__bg {
+    @include bg-skew(#f4f3f9);
+  }
+}

@@ -1,0 +1,100 @@
+@import "style/variables";
+
+.Layout {
+  &__header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+
+    > .container {
+      padding: 25px 0;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+
+      > * {
+        position: relative;
+        z-index: 2;
+      }
+    }
+  }
+
+  &__header-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 110px;
+    overflow: hidden;
+    z-index: 1;
+  }
+
+  &__header-logo {
+    font-size: 28px;
+    font-family: 'Ubuntu', $font-family-sans-serif;
+    font-weight: 500;
+    color: #fff !important;
+
+    &, &:hover {
+      text-decoration: none;
+    }
+
+    &::before {
+      display: inline-block;
+      //border-radius: 50%;
+      padding: 8px 0 0 6px;
+      width: 60px;
+      height: 60px;
+      text-align: center;
+      letter-spacing: 3px;
+      margin-right: 15px;
+      background-color: rgba(0, 0, 0, .1);
+      content: '<)';
+    }
+
+    &:hover::before {
+      content: '=)';
+    }
+  }
+
+  &__header-nav {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 0;
+
+
+    > li {
+      list-style: none;
+      margin-bottom: 0;
+
+      > a {
+        padding: 15px;
+        display: inline-block;
+        color: #fff;
+        background-color: rgba(0, 0, 0, 0);
+        transition: background-color .1s ease-in-out;
+
+        &:hover {
+          background-color: rgba(0, 0, 0, .1);
+        }
+      }
+    }
+  }
+  &__header-nav > &__header-nav-button {
+    > a {
+      text-transform: uppercase;
+      background-color: rgba($pink, .5);
+
+      &:hover {
+        background-color: rgba($pink, 1);
+      }
+    }
+  }
+
+  &__content {
+    position: relative;
+    z-index: 1;
+  }
+}

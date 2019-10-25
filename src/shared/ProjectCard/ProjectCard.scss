@@ -1,0 +1,53 @@
+@import 'style/variables';
+
+.ProjectCard {
+  position: relative;
+  z-index: 10;
+  padding: 0 25px 50px;
+
+  > h2 {
+    margin-bottom: 40px;
+  }
+
+  &::after {
+    position: absolute;
+    top: -15px;
+    left: 0;
+    right: 15px;
+    height: 150px;
+    display: block;
+    content: '';
+    background-size: cover;
+    background-color: $dark;
+    z-index: 1;
+  }
+
+  > * {
+    position: relative;
+    z-index: 2;
+  }
+
+  &_name_aliencloud::after {
+    background-image: url('../../static/projects/aliencloud.jpg');
+  }
+  &_name_goldencruises::after {
+    background-image: url('../../static/projects/goldencruises.jpg');
+  }
+  &_name_vindog::after {
+    background-image: url('../../static/projects/vindog.jpg');
+  }
+  &_name_dao::after {
+    background-image: url('../../static/projects/dao.jpg');
+  }
+
+  &__title {
+    display: inline-block;
+    padding: 15px;
+    background-color: #f2f2f2;
+  }
+  &__description {
+    height: 54px;
+    color: #fff;
+    text-shadow: 0 1px 0 #000;
+  }
+}

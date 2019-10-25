@@ -1,0 +1,81 @@
+@import "style/variables";
+
+.SectionTechnologies {
+  position: relative;
+  z-index: 10;
+  padding: 0 25px 50px 25px;
+
+  p {
+    font-size: 16px;
+    padding: 5px 0 0 0;
+    margin-bottom: 5px;
+
+    span {
+      display: inline-block;
+
+      &::after {
+        display: inline-block;
+        color: $gray-500;
+        content: '•';
+        padding: 0 5px;
+      }
+
+      &:last-child::after {
+        display: none;
+      }
+    }
+  }
+
+  &__top {
+    font-size: 24px !important;
+  }
+
+  &__columns {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    > div {
+      width: 25%;
+      padding: 26px;
+    }
+
+  }
+
+  &__title {
+    position: relative;
+    display: inline-block;
+    padding: 15px;
+    background-color: rgba(0, 0, 0, .05);
+    margin-bottom: 15px;
+
+    &_logo_yii, &_logo_react {
+      &::after {
+        position: absolute;
+        top: 50%;
+        right: -95px;
+        display: inline-block;
+        content: '';
+      }
+    }
+
+    &_logo_yii {
+      &::after {
+        width: 80px;
+        height: 34px;
+        margin-top: -17px;
+        background: url('../../../static/logo-yii.svg');
+      }
+    }
+
+    &_logo_react {
+      &::after {
+        width: 80px;
+        height: 56.6px;
+        margin-top: -28.3px;
+        background: url('../../../static/logo-react.svg');
+        right: -81px;
+      }
+    }
+  }
+}
