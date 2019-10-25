@@ -6,9 +6,46 @@
   padding: 0 25px 50px;
   margin: 81px 0px;
 
-  > h2 {
-    margin-bottom: 40px;
+  h2 {
+    margin-bottom: 20px;
+    color: #ffffff;
+  }
+
+  &__description {
+    color: #ffffff;
+  }
+
+  &__github-link {
+    display: inline-block;
+    color: #db1db0;
+    margin-bottom: 30px;
+
+    &:hover {
+      color: #db1db0;
+      opacity: 0.8;
+      text-decoration: none;
+    }
   }
 
   @include bg-skew();
+
+  &__list {
+    padding-left: 60px;
+
+    .List__text {
+      color: $white;
+    }
+
+    .List__item-title_link {
+      color: $white;
+      text-decoration: none;
+
+      &:hover {
+        color: $white;
+        opacity: 0.8;
+        text-decoration: none;
+      }
+    }
+  }
+
 }

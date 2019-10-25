@@ -17,9 +17,11 @@ export default class List extends React.PureComponent {
     render() {
         return (
             <div className={bem(bem.block(), this.props.className)}>
-                <h3 className={bem.element('title')}>
-                    {this.props.list.title}
-                </h3>
+                {this.props.list.title && (
+                    <h3 className={bem.element('title')}>
+                        {this.props.list.title}
+                    </h3>
+                )}
                 <ul className={bem.element('text')}>
                     {this.props.list.items.map((item, index) => (
                         <li
@@ -28,9 +30,22 @@ export default class List extends React.PureComponent {
                         >
                             <span className={bem.element('point')}>{'—'}</span>
                             <div>
-                                <span className={bem.element('item-title')}>
-                                    {item.title}
-                                </span>
+                                {item.href
+                                    ? (
+                                        <a
+                                            className={bem.element('item-title', 'link')}
+                                            target={'_blank'}
+                                            href={item.href}
+                                        >
+                                            {item.title}
+                                        </a>
+                                    )
+                                    : (
+                                        <span className={bem.element('item-title')}>
+                                            {item.title}
+                                        </span>
+                                    )
+                                }
                                 <p className={bem.element('item-description')}>
                                     {item.description}
                                 </p>

@@ -1,11 +1,48 @@
 import React from 'react';
-
+import List from 'shared/List'
 import {html} from 'components';
 
 import './SectionOpenSource.scss';
 import ProjectCard from 'shared/ProjectCard/ProjectCard';
 
 const bem = html.bem('SectionOpenSource');
+
+const SITES = {
+    title: '',
+    items: [
+        {
+            title: 'Jii Framework',
+            href: 'https://github.com/jiisoft/jii',
+            description: 'Full-Stack JavaScript фреймворк, основанный на архитектуре Yii2'
+        },
+        {
+            title: 'Amadeus SOAP WebService',
+            href: 'https://github.com/kozhindev/amadeus-ws-client',
+            description: 'PHP клиент для работы с Amadeus GDS SOAP Web Service'
+        },
+        {
+            title: 'Trade Ticker',
+            href: 'https://github.com/kozhindev/trade-ticker',
+            description: 'Реалтайм подгрузка курсов криптовалют с различных бирж'
+        },
+        {
+            title: 'WebSocket Client & Server',
+            href: 'https://github.com/kozhindev/ws',
+            description: 'Веб-сокет клиент-север с авторизацией и улучшениями'
+        },
+        {
+            title: 'ListParser',
+            href: 'https://github.com/kozhindev/list-parser',
+            description: 'Утилита для импорта больших списков в zip/csv/xls/..'
+        },
+        {
+            title: 'XmlHelper',
+            href: 'https://github.com/kozhindev/xml-helper',
+            description: 'Преобразование XML -> Array и обратно'
+        }
+    ]
+};
+
 
 export default class SectionOpenSource extends React.PureComponent {
 
@@ -21,7 +58,7 @@ export default class SectionOpenSource extends React.PureComponent {
                                 </span>
                                 Open-Source
                             </h2>
-                            <p>
+                            <p className={bem.element('description')}>
                                 Мы создаем open-source решения, накапливая в них лучшие практики и опыт
                                 Переиспользуя код, мы увеличиваем качество и скорость разработки
                             </p>
@@ -39,74 +76,10 @@ export default class SectionOpenSource extends React.PureComponent {
                             />
                         </div>
                         <div className='col-6'>
-                            <ul>
-                                <li>
-                                    <a
-                                        href='https://github.com/jiisoft/jii'
-                                        target='_blank'
-                                    >
-                                        Jii Framework
-                                    </a>
-                                    <p>
-                                        Full-Stack JavaScript фреймворк, основанный на архитектуре Yii2
-                                    </p>
-                                </li>
-                                <li>
-                                    <a
-                                        href='https://github.com/kozhindev/amadeus-ws-client'
-                                        target='_blank'
-                                    >
-                                        Amadeus SOAP WebService
-                                    </a>
-                                    <p>
-                                        PHP клиент для работы с Amadeus GDS SOAP Web Service
-                                    </p>
-                                </li>
-                                <li>
-                                    <a
-                                        href='https://github.com/kozhindev/trade-ticker'
-                                        target='_blank'
-                                    >
-                                        Trade Ticker
-                                    </a>
-                                    <p>
-                                        Реалтайм подгрузка курсов криптовалют с различных бирж
-                                    </p>
-                                </li>
-                                <li>
-                                    <a
-                                        href='https://github.com/kozhindev/ws'
-                                        target='_blank'
-                                    >
-                                        WebSocket Client & Server
-                                    </a>
-                                    <p>
-                                        Веб-сокет клиент-север с авторизацией и улучшениями
-                                    </p>
-                                </li>
-                                <li>
-                                    <a
-                                        href='https://github.com/kozhindev/list-parser'
-                                        target='_blank'
-                                    >
-                                        ListParser
-                                    </a>
-                                    <p>
-                                        Утилита для импорта больших списков в zip/csv/xls/..
-                                    </p>
-                                </li>
-                                <li>
-                                    <a
-                                        href='https://github.com/kozhindev/xml-helper'
-                                        target='_blank'
-                                    >
-                                        XmlHelper
-                                    </a>
-                                    <p>
-                                        Преобразование XML -> Array и обратно
-                                    </p>
-                                </li>
-                            </ul>
+                            <List
+                                className={bem.element('list')}
+                                list={SITES}
+                            />
                         </div>
                     </div>
                 </div>
