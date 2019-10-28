@@ -1,0 +1,39 @@
+.List {
+  &__title {
+    margin-bottom: 30px;
+  }
+
+  &__text {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__point {
+    margin-right: 5px;
+  }
+
+  &__item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 27px;
+
+    &:last-child {
+      margin-bottom: 0px;
+    }
+  }
+
+  &__item-title {
+    margin-bottom: 13px;
+  }
+
+  &__item-title_link {
+
+  }
+
+  &__item-description {
+    font-size: 16px;
+    padding: 0px;
+    margin: 0px;
+  }
+}

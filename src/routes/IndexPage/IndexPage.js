@@ -8,6 +8,7 @@ import SectionAbout from 'routes/IndexPage/views/SectionAbout';
 import SectionDirections from 'routes/IndexPage/views/SectionDirections';
 import SectionTechnologies from 'routes/IndexPage/views/SectionTechnologies';
 import SectionOpenSource from 'routes/IndexPage/views/SectionOpenSource';
+import SectionFeedback from 'routes/IndexPage/views/SectionFeedback';
 
 const bem = html.bem('IndexPage');
 
@@ -21,6 +22,7 @@ export default class IndexPage extends React.PureComponent {
                 <SectionDirections/>
                 <SectionOpenSource/>
                 <SectionTechnologies/>
+                <SectionFeedback/>
             </div>
         );
     }

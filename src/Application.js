@@ -5,11 +5,11 @@ import {ui} from 'components';
 import Layout from 'shared/Layout';
 import routes from './routes';
 
-ui.addViews({
-    'form.InputFieldView': require('yii-steroids/ui/form/InputField/InputFieldView').default,
-    'form.TextFieldView': require('yii-steroids/ui/form/TextField/TextFieldView').default,
-    'form.ButtonView': require('yii-steroids/ui/form/Button/ButtonView').default,
-});
+
+
+ui.addViews(require.context('yii-steroids/ui', true, /View.js$/));
+ui.addViews(require.context('./ui', true, /View.js$/));
+
 
 export default class Application extends React.PureComponent {
 

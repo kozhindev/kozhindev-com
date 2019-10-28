@@ -35,6 +35,6 @@ export default class ContactsMap extends React.PureComponent {
                     }}
                 />
             </GoogleMap>
-        );
+        )
     }
 }

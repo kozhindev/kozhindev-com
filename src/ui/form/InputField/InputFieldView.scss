@@ -1,0 +1,14 @@
+@import "style/variables";
+
+.InputFieldView {
+  width: 100%;
+  padding: 20px 24px;
+  border: none;
+  border-radius: 2px;
+  background-color: rgb(51, 51, 51);
+
+  @include placeholder {
+    color: #cccccc;
+    font-size: 16px;
+  }
+}

@@ -13,6 +13,9 @@ import {ROUTE_ROOT} from 'routes';
 
 const bem = html.bem('Layout');
 
+const NAV = ['Проекты', 'Технологии', 'Контакты'];
+
+
 @connect(
     state => ({
         isRootPage: getCurrentItemParam(state, 'id') === ROUTE_ROOT,
@@ -65,21 +68,13 @@ export default class Layout extends React.PureComponent {
                             KozhinDev
                         </a>
                         <ul className={bem.element('header-nav')}>
-                            <li>
-                                <a href='#'>
-                                    Проекты
-                                </a>
-                            </li>
-                            <li>
-                                <a href='#'>
-                                    Технологии
-                                </a>
-                            </li>
-                            <li>
-                                <a href='#'>
-                                    Контакты
-                                </a>
-                            </li>
+                            {NAV.map(item => (
+                                <li>
+                                    <a href='#'>
+                                        {item}
+                                    </a>
+                                </li>
+                            ))}
                             <li>
                                 <a href='tel:+79509806194'>
                                     +7 950 980 6194
@@ -98,6 +93,35 @@ export default class Layout extends React.PureComponent {
                 <main className={bem.element('content')}>
                     {this.props.children}
                 </main>
+                <footer className={bem.element('footer')}>
+                    <div className='container'>
+                        <div className={'row'}>
+                            <div className={'col-6'}>
+                                Работаем с 2017 года
+                            </div>
+                            <ul className={bem(bem.element('footer-nav'), 'col-6', 'd-flex', 'text-right')}>
+                                {NAV.map(item => (
+                                    <li className={bem.element('footer-nav-item')}>
+                                        <a
+                                            href='#'
+                                            className={bem.element('footer-nav-link')}
+                                        >
+                                            {item}
+                                        </a>
+                                    </li>
+                                ))}
+                                <li className={bem.element('footer-nav-item')}>
+                                    <a
+                                        href='tel:+79509806194'
+                                        className={bem.element('footer-nav-link')}
+                                    >
+                                        +7 950 980 6194
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </footer>
                 <ModalWrapper/>
             </div>
         );

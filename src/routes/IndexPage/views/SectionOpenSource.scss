@@ -3,9 +3,69 @@
 .SectionOpenSource {
   position: relative;
   z-index: 10;
-  padding: 0 25px 50px;
+  margin: 81px 0px;
+  padding: 50px 0px 33px;
 
-  > h2 {
-    margin-bottom: 40px;
+  h2 {
+    margin-bottom: 20px;
+    color: #ffffff;
   }
+
+  &__description {
+    color: #ffffff;
+  }
+
+
+
+  &__github-link {
+    margin-bottom: 35px;
+    display: inline-flex;
+    align-items: center;
+    color: #db1db0;
+
+    &:hover {
+      color: #db1db0;
+      opacity: 0.8;
+      text-decoration: none;
+
+      path {
+        opacity: 0.8;
+      }
+    }
+  }
+
+  &__github-icon {
+    margin-right: 5px;
+
+    svg {
+      width: 26px;
+    }
+
+    path {
+      fill: #db1db0;
+    }
+  }
+
+  @include bg-skew();
+
+  &__list {
+    padding-left: 60px;
+
+    .List__text {
+      color: $white;
+    }
+
+    .List__item-title_link {
+      color: $white;
+      text-decoration: none;
+
+      &:hover {
+        color: $white;
+        opacity: 0.8;
+        text-decoration: none;
+      }
+    }
+  }
+
+
 }

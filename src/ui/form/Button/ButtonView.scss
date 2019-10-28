@@ -1,0 +1,52 @@
+@import "style/variables";
+
+$shortEffect: .25s ease-in;
+
+.ButtonView {
+  position: relative;
+
+  &__icon {
+    margin-right: 3px;
+
+    &_without-label {
+      margin: 0;
+    }
+  }
+
+  &_is-loading &__label {
+    opacity: 0;
+  }
+
+  &__preloader {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+
+  &_color_primary {
+    padding: 20px 40px;
+    border: none;
+    border-radius: 2px;
+    outline: none;
+    box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.2);
+    color: $white;
+    font-size: 1rem;
+    text-transform: uppercase;
+    background: linear-gradient(101deg, rgb(70,24,115) 0%, rgb(152,0,64) 100%);
+    transition: padding $shortEffect;
+
+
+
+    &:hover {
+      outline: none;
+      text-decoration: none;
+      background-color: rgba($pink, 1);
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+}

@@ -17,23 +17,27 @@ export default class SectionFeedback extends React.PureComponent {
         return (
             <div className={bem.block()}>
                 <div className='container'>
-                    <h2>
-                        <span>
-                            05
-                        </span>
-                        Свяжитесь с нами
-                    </h2>
                     <div className='row'>
                         <div className='col-6'>
-                            <ul>
+                            <h2>
+                                <span>
+                                    05
+                                </span>
+                                Свяжитесь с нами
+                            </h2>
+                            <ul className={'list-unstyled'}>
                                 {contacts.map((item, index) => (
-                                    <li key={index}>
-                                    <span>
-                                        {item.label}
-                                    </span>
+                                    <li
+                                        key={index}
+                                        className={bem.element('item')}
+                                    >
+                                        <span className={bem.element('item-label')}>
+                                            {item.label}
+                                        </span>
                                         <a
                                             href={item.href}
                                             target='_blank'
+                                            className={bem.element('item-link')}
                                         >
                                             {item.value}
                                         </a>
@@ -41,18 +45,23 @@ export default class SectionFeedback extends React.PureComponent {
                                 ))}
                             </ul>
                         </div>
-                        <div className='col-6'>
+                        <div className='col-6 d-flex'>
                             <Form
                                 formId='SectionFeedback'
+                                className={'d-flex flex-column w-100 ml-4'}
                             >
                                 <InputField
                                     attribute='email'
                                     placeholder='you@email.com'
+                                    className={bem.element('input-field')}
                                 />
-                                <TextField
-                                    attribute='email'
-                                    placeholder='Хочу обсудить проект...'
-                                />
+                                <span className={bem.element('text-field-wrap')}>
+                                    <TextField
+                                        attribute='email'
+                                        placeholder='Хочу обсудить проект...'
+                                        className={bem.element('text-field')}
+                                    />
+                                </span>
                                 <Button
                                     type='submit'
                                     label='Свяжитесь со мной'
