@@ -133,4 +133,29 @@ $shortEffect: .25s ease-in;
     position: relative;
     z-index: 1;
   }
+
+
+  &__footer {
+    background: $dark;
+    padding: 5px 0px;
+  }
+
+
+  &__footer-nav-item {
+    list-style: none;
+    margin-bottom: 0;
+  }
+
+  &__footer-nav-link {
+    padding: 15px;
+    display: inline-block;
+    color: $white;
+    background-color: rgba(0, 0, 0, 0);
+
+    &:hover {
+      color: $white;
+      opacity: 0.8;
+      text-decoration: none;
+    }
+  }
 }

@@ -7,7 +7,7 @@ require('yii-steroids/webpack')
         outputPath: __dirname + '/dist',
         sourcePath: __dirname + '/src',
         useHash: true,
-        webpack: {
+/*        webpack: {
             module: {
                 rules: {
                     image: {
@@ -19,14 +19,15 @@ require('yii-steroids/webpack')
                             file: {
                                 loader: 'svg-inline-loader',
                                 options: {
-                                    removeSVGTagAttrs: false,
+                                    removeSVGTagAttrs: true,
+                                    removingTags: true
                                 },
                             },
                         },
                     },
                 },
             },
-        },
+        },*/
         devServer: {
             historyApiFallback: true,
             proxy: {

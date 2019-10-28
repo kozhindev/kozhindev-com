@@ -62,13 +62,18 @@ export default class SectionOpenSource extends React.PureComponent {
                                 Мы создаем open-source решения, накапливая в них лучшие практики и опыт
                                 Переиспользуя код, мы увеличиваем качество и скорость разработки
                             </p>
-                            <Icon name={'github'}/>
                             <a
                                 className={bem.element('github-link')}
                                 href='https://github.com/kozhindev'
                                 target='_blank'
                             >
-                                github.com/kozhindev
+                                <Icon
+                                    name={'github'}
+                                    className={bem.element('github-icon')}
+                                />
+                                <span>
+                                    github.com/kozhindev
+                                </span>
                             </a>
                             <ProjectCard
                                 name='steroids'

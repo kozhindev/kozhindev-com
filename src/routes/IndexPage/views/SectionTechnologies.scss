@@ -3,13 +3,24 @@
 .SectionTechnologies {
   position: relative;
   z-index: 10;
-  padding: 0 25px 50px 25px;
+  padding: 73px 0px 70px;
 
   p {
     font-size: 16px;
     padding: 5px 0 0 0;
-    margin-bottom: 5px;
+  }
 
+  &__description {
+    margin-bottom: 42px;
+  }
+
+  &__cart {
+    max-width: 320px;
+    width: calc(100%/3);
+    min-width: 300px;
+  }
+
+  &__cart-tags {
     span {
       display: inline-block;
 
@@ -26,7 +37,7 @@
     }
   }
 
-  &__top {
+  &__cart-tech {
     font-size: 24px !important;
   }
 
@@ -42,12 +53,10 @@
 
   }
 
-  &__title {
+  &__cart-title {
     position: relative;
-    display: inline-block;
-    padding: 15px;
-    background-color: rgba(0, 0, 0, .05);
     margin-bottom: 15px;
+    @include title-overlay();
 
     &_logo_yii, &_logo_react {
       &::after {
