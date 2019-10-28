@@ -1,8 +1,10 @@
 import IndexPage from './IndexPage';
-import ContactPage from 'routes/ContactPage';
+import ContactsPage from 'routes/ContactsPage';
+import TechnologiesPage from 'routes/TechnologiesPage';
 
 export const ROUTE_ROOT = 'root';
-export const ROUTE_CONTACT = 'contact';
+export const ROUTE_CONTACTS = 'contacts';
+export const ROUTE_TECHNOLOGIES = 'technologies';
 
 export default {
     id: ROUTE_ROOT,
@@ -11,11 +13,17 @@ export default {
     component: IndexPage,
     label: __('KozhinDev'),
     items: {
-        [ROUTE_CONTACT]: {
+        [ROUTE_CONTACTS]: {
             exact: true,
-            path: '/contact',
-            component: ContactPage,
+            path: '/contacts',
+            component: ContactsPage,
             label: __('Контакты'),
-        }
+        },
+        [ROUTE_TECHNOLOGIES]: {
+            exact: true,
+            path: '/technologies',
+            component: TechnologiesPage,
+            label: __('Технологиии'),
+        },
     }
 };

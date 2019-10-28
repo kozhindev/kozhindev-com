@@ -2,15 +2,23 @@ import React from 'react';
 
 import {html} from 'components';
 
-import './ContactPage.scss';
-import ContactMap from './views/ContactMap';
+import './ContactsPage.scss';
+import ContactMap from './views/ContactsMap';
 import contacts from 'data/contacts';
+import githubIcon from 'static/icon-github.svg';
+import vkIcon from 'static/icon-vk.svg';
+import instagramIcon from 'static/icon-instagram.svg';
 
-const bem = html.bem('ContactPage');
+const bem = html.bem('ContactsPage');
 
-export default class ContactPage extends React.PureComponent {
+export default class ContactsPage extends React.PureComponent {
 
     render() {
+        const icons = {
+            vk: vkIcon,
+            github: githubIcon,
+            instagram: instagramIcon,
+        };
         return (
             <div className={bem.block()}>
                 <ContactMap
@@ -36,8 +44,8 @@ export default class ContactPage extends React.PureComponent {
                 />
                 <div className={bem(bem.element('content'), 'container')}>
                     <div className={bem.element('card')}>
-                        <ul>
-                            {contacts.map((item, index) => (
+                        <ul className={bem.element('labels')}>
+                            {contacts.filter(item => !icons[item.id]).map((item, index) => (
                                 <li key={index}>
                                     <span>
                                         {item.label}
@@ -47,6 +55,18 @@ export default class ContactPage extends React.PureComponent {
                                         target='_blank'
                                     >
                                         {item.value}
+                                    </a>
+                                </li>
+                            ))}
+                        </ul>
+                        <ul className={bem.element('icons')}>
+                            {contacts.filter(item => icons[item.id]).map((item, index) => (
+                                <li key={index}>
+                                    <a
+                                        href={item.href}
+                                        target='_blank'
+                                    >
+                                        <img src={icons[item.id]} alt={item.label}/>
                                     </a>
                                 </li>
                             ))}

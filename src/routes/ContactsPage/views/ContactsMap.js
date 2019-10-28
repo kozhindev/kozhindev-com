@@ -6,15 +6,15 @@ import mapStyles from './mapStyles.json';
 
 @withScriptjs
 @withGoogleMap
-export default class ContactMap extends React.PureComponent {
+export default class ContactsMap extends React.PureComponent {
 
     render() {
         return (
             <GoogleMap
                 defaultZoom={13}
                 defaultCenter={{
-                    lat: 56.012,
-                    lng: 92.790,
+                    lat: 56.005,
+                    lng: 92.795,
                 }}
                 defaultOptions={{
                     disableDefaultUI: true,
