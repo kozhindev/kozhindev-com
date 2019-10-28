@@ -90,17 +90,24 @@ $shortEffect: .25s ease-in;
       list-style: none;
       margin-bottom: 0;
 
-      > a {
-        padding: 15px;
-        display: inline-block;
-        color: #fff;
-        background-color: rgba(0, 0, 0, 0);
-        transition: background-color $shortEffect, padding $shortEffect, font-size $shortEffect;
+    }
+  }
 
-        &:hover {
-          background-color: rgba(0, 0, 0, .1);
-        }
-      }
+  &__header-nav-link {
+    padding: 15px;
+    display: inline-block;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0);
+    transition: background-color $shortEffect, padding $shortEffect, font-size $shortEffect;
+
+    &:hover {
+      background-color: rgba(0, 0, 0, .1);
+      color: #fff;
+    }
+
+    &_is-active {
+      background-color: red;
+      background-color: rgba(0, 0, 0, .1);
     }
   }
 
@@ -115,7 +122,7 @@ $shortEffect: .25s ease-in;
       text-transform: uppercase;
       border-radius: 2px;
       background: linear-gradient(101deg, rgb(70,24,115) 0%, rgb(152,0,64) 100%);
-      box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.2);
       transition: padding $shortEffect;
 
       &:hover {
@@ -139,7 +146,7 @@ $shortEffect: .25s ease-in;
     position: relative;
     z-index: 2;
     background: $dark;
-    padding: 5px 0px;
+    padding: 5px 0;
   }
 
   &__footer-nav {

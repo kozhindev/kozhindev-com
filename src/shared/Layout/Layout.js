@@ -2,29 +2,32 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 import ModalWrapper from 'yii-steroids/ui/modal/ModalWrapper';
+import Link from 'yii-steroids/ui/nav/Link';
 import {STATUS_RENDER_ERROR} from 'yii-steroids/ui/layoutHoc';
 
 import {html} from 'components';
 
 import './Layout.scss';
 import ColorBackground from 'routes/IndexPage/views/ColorBackground';
-import {getCurrentItemParam} from 'yii-steroids/reducers/navigation';
+import {getCurrentItemParam, getNavItems, getRoute} from 'yii-steroids/reducers/navigation';
 import {ROUTE_ROOT} from 'routes';
 
 const bem = html.bem('Layout');
 
-const NAV = ['Проекты', 'Технологии', 'Контакты'];
-
 
 @connect(
     state => ({
+        rootPagePath: getRoute(state, ROUTE_ROOT).path,
         isRootPage: getCurrentItemParam(state, 'id') === ROUTE_ROOT,
+        navItems: getNavItems(state, ROUTE_ROOT),
     })
 )
 export default class Layout extends React.PureComponent {
 
     static propTypes = {
         isRootPage: PropTypes.bool,
+        rootPagePath: PropTypes.string,
+        navItems: PropTypes.object,
     };
 
     constructor() {
@@ -61,27 +64,38 @@ export default class Layout extends React.PureComponent {
                         <ColorBackground/>
                     </div>
                     <div className='container'>
-                        <a
-                            href='/'
+                        <Link
                             className={bem.element('header-logo')}
+                            to={this.props.rootPagePath}
+                            noStyles
                         >
                             KozhinDev
-                        </a>
+                        </Link>
                         <ul className={bem.element('header-nav')}>
-                            {NAV.map(item => (
-                                <li>
-                                    <a href='#'>
-                                        {item}
-                                    </a>
+                            {this.props.navItems.map(item => (
+                                <li key={item.id}>
+                                    <Link
+                                        className={bem.element('header-nav-link', {
+                                            'is-active': item.isActive,
+                                        })}
+                                        to={item.path}
+                                        noStyles
+                                    >
+                                        {item.label}
+                                    </Link>
                                 </li>
                             ))}
                             <li>
-                                <a href='tel:+79509806194'>
+                                <a
+                                    href='tel:+79509806194'
+                                    className={bem.element('header-nav-link')}
+                                >
                                     +7 950 980 6194
                                 </a>
                             </li>
                             <li className={bem.element('header-nav-button')}>
                                 <a
+                                    className={bem.element('header-nav-link')}
                                     href='#'
                                 >
                                     Обсудить проект
@@ -100,14 +114,18 @@ export default class Layout extends React.PureComponent {
                                 Работаем с 2017 года
                             </div>
                             <ul className={bem(bem.element('footer-nav'), 'col-6', 'd-flex', 'justify-content-end')}>
-                                {NAV.map(item => (
-                                    <li className={bem.element('footer-nav-item')}>
-                                        <a
-                                            href='#'
+                                {this.props.navItems.map(item => (
+                                    <li
+                                        className={bem.element('footer-nav-item')}
+                                        key={item.id}
+                                    >
+                                        <Link
+                                            to={item.path}
                                             className={bem.element('footer-nav-link')}
+                                            noStyles
                                         >
-                                            {item}
-                                        </a>
+                                            {item.label}
+                                        </Link>
                                     </li>
                                 ))}
                                 <li className={bem.element('footer-nav-item')}>
