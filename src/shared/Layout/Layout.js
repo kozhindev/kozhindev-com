@@ -96,10 +96,10 @@ export default class Layout extends React.PureComponent {
                 <footer className={bem.element('footer')}>
                     <div className='container'>
                         <div className={'row'}>
-                            <div className={'col-6'}>
+                            <div className={bem(bem.element('text'), 'col-6')}>
                                 Работаем с 2017 года
                             </div>
-                            <ul className={bem(bem.element('footer-nav'), 'col-6', 'd-flex', 'text-right')}>
+                            <ul className={bem(bem.element('footer-nav'), 'col-6', 'd-flex', 'justify-content-end')}>
                                 {NAV.map(item => (
                                     <li className={bem.element('footer-nav-item')}>
                                         <a
@@ -113,7 +113,7 @@ export default class Layout extends React.PureComponent {
                                 <li className={bem.element('footer-nav-item')}>
                                     <a
                                         href='tel:+79509806194'
-                                        className={bem.element('footer-nav-link')}
+                                        className={bem.element('footer-nav-link', 'tel')}
                                     >
                                         +7 950 980 6194
                                     </a>
