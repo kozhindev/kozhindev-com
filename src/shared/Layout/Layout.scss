@@ -136,10 +136,22 @@ $shortEffect: .25s ease-in;
 
 
   &__footer {
+    position: relative;
+    z-index: 2;
     background: $dark;
     padding: 5px 0px;
   }
 
+  &__footer-nav {
+    margin: 0px;
+  }
+
+  &__text {
+    color: $white;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-size: 16px;
+  }
 
   &__footer-nav-item {
     list-style: none;
@@ -147,15 +159,20 @@ $shortEffect: .25s ease-in;
   }
 
   &__footer-nav-link {
-    padding: 15px;
+    padding: 20px;
     display: inline-block;
     color: $white;
     background-color: rgba(0, 0, 0, 0);
+    font-size: 16px;
 
     &:hover {
       color: $white;
       opacity: 0.8;
       text-decoration: none;
     }
+  }
+
+  &__footer-nav-link_tel {
+    padding-right: 0px;
   }
 }
