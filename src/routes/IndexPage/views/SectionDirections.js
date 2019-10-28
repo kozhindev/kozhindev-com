@@ -117,7 +117,7 @@ export default class SectionDirections extends React.PureComponent {
                     <section className={bem.element('section-sites')}>
                         <div className='container'>
                             <div className='row'>
-                                <div className='col-5'>
+                                <div className='col-lg-5'>
                                     <ProjectCard
                                         name='helponclick'
                                         title='HelpOnClick'
@@ -134,7 +134,7 @@ export default class SectionDirections extends React.PureComponent {
                                         description='Читайте интересные новеллы и ранобэ'
                                     />
                                 </div>
-                                <div className='col-7'>
+                                <div className='col-lg-7'>
                                     <List
                                         className={bem.element('grey-list')}
                                         list={SITES}
@@ -147,13 +147,13 @@ export default class SectionDirections extends React.PureComponent {
                 <section className={bem.element('section-api')}>
                     <div className='container'>
                         <div className='row'>
-                            <div className='col-7'>
+                            <div className='col-lg-7'>
                                 <List
                                     className={bem.element('white-list')}
                                     list={API}
                                 />
                             </div>
-                            <div className='col-5'>
+                            <div className='col-lg-5'>
                                 <ProjectCard
                                     name='goldencruises'
                                     title='GoldenCruises'

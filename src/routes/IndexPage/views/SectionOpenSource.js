@@ -1,7 +1,7 @@
 import React from 'react';
 import List from 'shared/List'
 import {html} from 'components';
-
+import Icon from 'shared/Icon';
 import './SectionOpenSource.scss';
 import ProjectCard from 'shared/ProjectCard/ProjectCard';
 
@@ -51,7 +51,7 @@ export default class SectionOpenSource extends React.PureComponent {
             <div className={bem.block()}>
                 <div className='container'>
                     <div className='row'>
-                        <div className='col-6'>
+                        <div className='col-lg-6'>
                             <h2>
                                 <span>
                                     03
@@ -75,7 +75,7 @@ export default class SectionOpenSource extends React.PureComponent {
                                 description='Расширение функционала PHP Yii2 и набор React компонентов для SPA приложений'
                             />
                         </div>
-                        <div className='col-6'>
+                        <div className='col-lg-6'>
                             <List
                                 className={bem.element('list')}
                                 list={SITES}

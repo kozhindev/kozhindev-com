@@ -55,5 +55,13 @@
 
   }
 
+  &__more-link {
+    position: absolute;
+    bottom: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: $zindex-dropdown;
+  }
+
 
 }

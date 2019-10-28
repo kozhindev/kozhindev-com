@@ -7,6 +7,26 @@ require('yii-steroids/webpack')
         outputPath: __dirname + '/dist',
         sourcePath: __dirname + '/src',
         useHash: true,
+        webpack: {
+            module: {
+                rules: {
+                    image: {
+                        test: /\.(jpe?g|gif|png)$/,
+                    },
+                    svg: {
+                        test: /\.svg$/,
+                        use: {
+                            file: {
+                                loader: 'svg-inline-loader',
+                                options: {
+                                    removeSVGTagAttrs: false,
+                                },
+                            },
+                        },
+                    },
+                },
+            },
+        },
         devServer: {
             historyApiFallback: true,
             proxy: {
