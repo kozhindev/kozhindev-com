@@ -1,6 +1,7 @@
 import React from 'react';
 // import PropTypes from 'prop-types';
 import ModalWrapper from 'yii-steroids/ui/modal/ModalWrapper';
+import screenWatcherHoc from 'yii-steroids/ui/screenWatcherHoc';
 import {STATUS_RENDER_ERROR} from 'yii-steroids/ui/layoutHoc';
 
 import {html} from 'components';
@@ -11,7 +12,7 @@ import './Layout.scss';
 
 const bem = html.bem('Layout');
 
-
+@screenWatcherHoc()
 export default class Layout extends React.PureComponent {
 
     // static propTypes = {
