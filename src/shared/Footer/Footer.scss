@@ -1,0 +1,42 @@
+@import 'style/variables';
+
+.Footer {
+  position: relative;
+  z-index: 2;
+  background: $dark;
+  padding: 5px 0;
+
+  &__nav {
+    margin: 0;
+  }
+
+  &__text {
+    color: $white;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-size: 16px;
+  }
+
+  &__nav-item {
+    list-style: none;
+    margin-bottom: 0;
+  }
+
+  &__nav-link {
+    padding: 20px;
+    display: inline-block;
+    color: $white;
+    background-color: rgba(0, 0, 0, 0);
+    font-size: 16px;
+
+    &:hover {
+      color: $white;
+      opacity: 0.8;
+      text-decoration: none;
+    }
+
+    &_tel {
+      padding-right: 0;
+    }
+  }
+}

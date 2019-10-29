@@ -1,0 +1,146 @@
+@import 'style/variables';
+
+$shortEffect: .25s ease-in;
+
+.Header {
+
+  $root: &;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+
+  > .container {
+    padding: 25px 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    transition: padding $shortEffect;
+
+    > * {
+      position: relative;
+      z-index: 2;
+    }
+  }
+
+  &_short {
+    > .container {
+      padding: 5px 0;
+    }
+
+    #{$root}__bg {
+      height: 60px;
+    }
+
+    #{$root}__logo {
+      font-size: 24px;
+
+      &::before {
+        width: 50px;
+        height: 50px;
+      }
+    }
+
+    #{$root}__nav {
+      > li > a {
+        padding: 13px 15px;
+        font-size: 16px;
+      }
+    }
+
+    #{$root}__nav-button {
+      > a {
+        padding: 13px 15px;
+      }
+    }
+  }
+
+  &__bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 110px;
+    overflow: hidden;
+    z-index: 1;
+    transition: height $shortEffect;
+  }
+
+  &__logo {
+    font-size: 28px;
+    font-family: 'Ubuntu', $font-family-sans-serif;
+    font-weight: 500;
+    color: #fff !important;
+    transition: font-size $shortEffect;
+
+    &, &:hover {
+      text-decoration: none;
+    }
+
+    &::before {
+      display: inline-block;
+      //border-radius: 50%;
+      padding: 8px 0 0 6px;
+      width: 60px;
+      height: 60px;
+      text-align: center;
+      letter-spacing: 3px;
+      margin-right: 15px;
+      background-color: rgba(0, 0, 0, .1);
+      content: '<)';
+      transition: width $shortEffect, height $shortEffect;
+    }
+
+    &:hover::before {
+      content: '=)';
+    }
+  }
+
+  &__nav {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 0;
+
+    > li {
+      list-style: none;
+      margin-bottom: 0;
+
+    }
+  }
+
+  &__nav-link {
+    padding: 15px;
+    display: inline-block;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0);
+    transition: background-color $shortEffect, padding $shortEffect, font-size $shortEffect;
+
+    &:hover {
+      background-color: rgba(0, 0, 0, .1);
+      color: #fff;
+    }
+
+    &_is-active {
+      background-color: red;
+      background-color: rgba(0, 0, 0, .1);
+    }
+  }
+
+
+  &__nav > &__nav-button {
+    > a {
+      text-transform: uppercase;
+      border-radius: 2px;
+      background: linear-gradient(101deg, rgb(70,24,115) 0%, rgb(152,0,64) 100%);
+      box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.2);
+      transition: padding $shortEffect;
+
+      &:hover {
+        background-color: rgba($pink, 1);
+        text-decoration: none;
+      }
+    }
+  }
+}
