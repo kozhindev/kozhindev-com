@@ -35,6 +35,7 @@ export default class ButtonView extends React.PureComponent {
         block: PropTypes.bool,
         className: PropTypes.string,
         view: PropTypes.func,
+        noStyles: PropTypes.bool,
     };
 
     render() {
@@ -99,6 +100,12 @@ export default class ButtonView extends React.PureComponent {
     }
 
     _getClassName(modifiers) {
+        if (this.props.noStyles) {
+            return bem(
+                this.props.className,
+            );
+        }
+
         return bem(
             bem.block({
                 color: this.props.color,
