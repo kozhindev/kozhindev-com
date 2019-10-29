@@ -10,6 +10,7 @@ import {ROUTE_ROOT} from 'routes';
 import './Footer.scss';
 
 const bem = html.bem('Footer');
+const phoneNumber = '+7 950 980 6194';
 
 @connect(
     state => ({
@@ -23,8 +24,6 @@ export default class Footer extends React.PureComponent {
     };
 
     render() {
-
-        const phoneNumber = '+7 950 980 6194';
 
         return (
             <footer className={bem.block()}>

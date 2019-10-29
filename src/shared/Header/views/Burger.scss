@@ -1,0 +1,39 @@
+.Burger {
+
+  $root: &;
+  $transition-time: 0.4s;
+  $rotation: 45deg;
+  $translateY: (21px / 2);
+  $translateX: 0;
+
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  padding: 13px 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  &_is-open {
+    #{$root}__line {
+      &_middle {
+        opacity: 0;
+      }
+
+      &_top {
+        transform: translateY($translateY) translateX($translateX) rotate($rotation);
+      }
+
+      &_bottom {
+        transform: translateY($translateY * -1) translateX($translateX) rotate($rotation * -1);
+      }
+    }
+  }
+
+  &__line {
+    width: 100%;
+    height: 3px;
+    background-color: #fff;
+    transition: all ease $transition-time;
+  }
+}

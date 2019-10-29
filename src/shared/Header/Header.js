@@ -2,7 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 import {getCurrentItemParam, getNavItems} from 'yii-steroids/reducers/navigation';
-import {isDesktop} from 'yii-steroids/reducers/screen';
+// import {isDesktop} from 'yii-steroids/reducers/screen';
+import Burger from './views/Burger';
 import Link from 'yii-steroids/ui/nav/Link';
 
 import {html} from 'components';
@@ -10,13 +11,15 @@ import ColorBackground from 'routes/IndexPage/views/ColorBackground';
 import {ROUTE_ROOT} from 'routes';
 
 const bem = html.bem('Header');
+const phoneNumber = '+7 950 980 6194';
 
 import './Header.scss';
 
 
 @connect(
     state => ({
-        isDesktop: isDesktop(state),
+        // isDesktop: isDesktop(state),
+        isDesktop: window.innerWidth > 1210,
         isRootPage: getCurrentItemParam(state, 'id') === ROUTE_ROOT,
         navItems: getNavItems(state, ROUTE_ROOT),
     })
@@ -33,8 +36,10 @@ export default class Header extends React.PureComponent {
         super(...arguments);
 
         this._onScroll = this._onScroll.bind(this);
+        this._onMobileNavToggle = this._onMobileNavToggle.bind(this);
         this.state = {
             isShort: !this.props.isRootPage || !this.props.isDesktop,
+            isMobileNavOpen: false,
         };
     }
 
@@ -57,7 +62,14 @@ export default class Header extends React.PureComponent {
 
         //return to root
         if (!prevProps.isRootPage && this.props.isRootPage) {
-            this._enableScrollAnimate();
+            if (this.props.isDesktop) {
+                this._enableScrollAnimate();
+            }
+        }
+
+        //resize with opened mobile nav
+        if (this.state.isMobileNavOpen && !prevProps.isDesktop && this.props.isDesktop) {
+            this._onMobileNavToggle();
         }
     }
 
@@ -75,11 +87,10 @@ export default class Header extends React.PureComponent {
 
 
     render() {
-        const phoneNumber = '+7 950 980 6194';
-
         return (
             <header className={bem.block({
-                short: this.state.isShort
+                short: this.state.isShort,
+                'mobile-nav-open': this.state.isMobileNavOpen,
             })}>
                 <div className={bem.element('bg')}>
                     <ColorBackground/>
@@ -89,43 +100,105 @@ export default class Header extends React.PureComponent {
                         className={bem.element('logo')}
                         to={'/'}
                         noStyles
+                        onClick={this.state.isMobileNavOpen && this._onMobileNavToggle}
                     >
                         KozhinDev
                     </Link>
-                    <ul className={bem.element('nav')}>
-                        {this.props.navItems.map(item => (
-                            <li key={item.id}>
-                                <Link
-                                    className={bem.element('nav-link', {
-                                        'is-active': item.isActive,
-                                    })}
-                                    to={item.path}
-                                    noStyles
-                                >
-                                    {item.label}
-                                </Link>
-                            </li>
-                        ))}
-                        <li>
-                            <a
-                                href={`tel:${phoneNumber.replace(/ /g, '')}`}
-                                className={bem.element('nav-link')}
-                            >
-                                {phoneNumber}
-                            </a>
-                        </li>
-                        <li className={bem.element('nav-button')}>
-                            <a
-                                className={bem.element('nav-link')}
-                                href='#'
-                            >
-                                {__('Обсудить проект')}
-                            </a>
-                        </li>
-                    </ul>
+                    {this._renderNav()}
+                    <div className={bem.element('burger')}>
+                        <Burger
+                            isOpen={this.state.isMobileNavOpen}
+                            onToggle={this._onMobileNavToggle}
+                        />
+                    </div>
+                </div>
+                <div className={bem.element('mobile-nav-wrapper')}>
+                    <div className={bem.element('mobile-nav-bg')}>
+                        <ColorBackground/>
+                    </div>
+                    <div className={'container'}>
+                        {this._renderMobileNav()}
+                    </div>
                 </div>
             </header>
         );
+    }
+
+    _renderNav() {
+        return (
+            <ul className={bem.element('nav')}>
+                {this.props.navItems.map(item => (
+                    <li key={item.id}>
+                        <Link
+                            className={bem.element('nav-link', {
+                                'is-active': item.isActive,
+                            })}
+                            to={item.path}
+                            noStyles
+                        >
+                            {item.label}
+                        </Link>
+                    </li>
+                ))}
+                <li>
+                    <a
+                        href={`tel:${phoneNumber.replace(/ /g, '')}`}
+                        className={bem.element('nav-link')}
+                    >
+                        {phoneNumber}
+                    </a>
+                </li>
+                <li className={bem.element('nav-button')}>
+                    <a
+                        className={bem.element('nav-link')}
+                        href='#'
+                    >
+                        {__('Обсудить проект')}
+                    </a>
+                </li>
+            </ul>
+        );
+    }
+
+    _renderMobileNav() {
+        return(
+            <ul className={bem.element('mobile-nav')}>
+                {this.props.navItems.map(item => (
+                    <li key={item.id}>
+                        <Link
+                            className={bem.element('nav-link', {
+                                'is-active': item.isActive,
+                            })}
+                            to={item.path}
+                            noStyles
+                            onClick={this._onMobileNavToggle}
+                        >
+                            {item.label}
+                        </Link>
+                    </li>
+                ))}
+                <li>
+                    <a
+                        href={`tel:${phoneNumber.replace(/ /g, '')}`}
+                        className={bem.element('nav-link')}
+                    >
+                        {phoneNumber}
+                    </a>
+                </li>
+                <li className={bem.element('nav-button')}>
+                    <a
+                        className={bem.element('nav-link')}
+                        href='#'
+                    >
+                        {__('Обсудить проект')}
+                    </a>
+                </li>
+            </ul>
+        );
+    }
+
+    _onMobileNavToggle() {
+        this.setState({isMobileNavOpen: !this.state.isMobileNavOpen})
     }
 
     _onScroll() {
