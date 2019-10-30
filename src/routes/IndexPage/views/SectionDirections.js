@@ -166,8 +166,8 @@ export default class SectionDirections extends React.PureComponent {
                                 />
                                 <ProjectCard
                                     name='nda-cargo-transportation'
-                                    title='[NDA]'
-                                    description='Бекенд и Swagger документация сервиса для поиска перевозчиков и грузов'
+                                    title='HurryLorry'
+                                    description='REST API сервиса для поиска перевозчиков и грузов'
                                 />
                             </div>
                         </div>
