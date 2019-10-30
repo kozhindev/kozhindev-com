@@ -43,7 +43,7 @@ export default class Header extends React.PureComponent {
         };
     }
 
-    componentDidUpdate(prevProps) {
+    componentDidUpdate(prevProps, prevState) {
         //resize on root page
         if (prevProps.isRootPage && this.props.isRootPage) {
             if (prevProps.isDesktop && !this.props.isDesktop) {
@@ -70,6 +70,15 @@ export default class Header extends React.PureComponent {
         //resize with opened mobile nav
         if (this.state.isMobileNavOpen && !prevProps.isDesktop && this.props.isDesktop) {
             this._onMobileNavToggle();
+        }
+
+        if (!prevState.isMobileNavOpen && this.state.isMobileNavOpen) {
+            html.addClass(document.body, 'overflow-hidden');
+        }
+
+
+        if (prevState.isMobileNavOpen && !this.state.isMobileNavOpen) {
+            html.removeClass(document.body, 'overflow-hidden');
         }
     }
 
@@ -183,14 +192,6 @@ export default class Header extends React.PureComponent {
                         className={bem.element('nav-link')}
                     >
                         {phoneNumber}
-                    </a>
-                </li>
-                <li className={bem.element('nav-button')}>
-                    <a
-                        className={bem.element('nav-link')}
-                        href='#'
-                    >
-                        {__('Обсудить проект')}
                     </a>
                 </li>
             </ul>

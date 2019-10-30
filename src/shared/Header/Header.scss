@@ -68,6 +68,7 @@ $shortEffect: .25s ease-in;
     }
 
     #{$root}__mobile-nav-wrapper {
+      min-height: 568px; //iphone 5
       display: flex;
     }
 
