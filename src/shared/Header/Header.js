@@ -14,6 +14,7 @@ const bem = html.bem('Header');
 const phoneNumber = '+7 950 980 6194';
 
 import './Header.scss';
+import Button from 'yii-steroids/ui/form/Button';
 
 
 @connect(
@@ -157,13 +158,12 @@ export default class Header extends React.PureComponent {
                         {phoneNumber}
                     </a>
                 </li>
-                <li className={bem.element('nav-button')}>
-                    <a
-                        className={bem.element('nav-link')}
-                        href='#'
-                    >
-                        {__('Обсудить проект')}
-                    </a>
+                <li>
+                    <Button
+                        className={bem.element('nav-btn')}
+                        color='primary'
+                        label={__('Обсудить проект')}
+                    />
                 </li>
             </ul>
         );

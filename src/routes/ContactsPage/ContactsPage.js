@@ -1,7 +1,5 @@
 import React from 'react';
-
 import {html} from 'components';
-
 import './ContactsPage.scss';
 import ContactMap from './views/ContactsMap';
 import contacts from 'data/contacts';
@@ -42,7 +40,7 @@ export default class ContactsPage extends React.PureComponent {
                         />
                     )}
                 />
-                <div className={bem(bem.element('content'), 'container')}>
+                <div className={bem(bem.element('content'), 'container-fluid')}>
                     <div className={bem.element('card')}>
                         <ul className={bem.element('labels')}>
                             {contacts.filter(item => !icons[item.id]).map((item, index) => (

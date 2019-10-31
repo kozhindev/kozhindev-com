@@ -29,7 +29,7 @@ export default class SectionFeedback extends React.PureComponent {
                                 {contacts.map((item, index) => (
                                     <li
                                         key={index}
-                                        className={bem.element('item')}
+                                        className={bem(bem.element('item'), 'd-flex flex-column d-lg-block')}
                                     >
                                         <span className={bem.element('item-label')}>
                                             {item.label}

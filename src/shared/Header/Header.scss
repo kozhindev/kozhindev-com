@@ -53,6 +53,11 @@ $shortEffect: .25s ease-in;
       }
     }
 
+    #{$root}__nav-btn {
+      padding: 13px 15px !important;
+      font-size: 16px;
+    }
+
   }
 
   &_mobile-nav-open {
@@ -186,21 +191,7 @@ $shortEffect: .25s ease-in;
     }
   }
 
-
-  &__nav > &__nav-button {
-    margin-left: 10px;
-
-    > a {
-      text-transform: uppercase;
-      border-radius: 2px;
-      background: linear-gradient(101deg, rgb(70,24,115) 0%, rgb(152,0,64) 100%);
-      box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.2);
-      transition: padding $shortEffect;
-
-      &:hover {
-        background-color: rgba($pink, 1);
-        text-decoration: none;
-      }
-    }
+  &__nav-btn {
+    padding: 15px !important;
   }
 }

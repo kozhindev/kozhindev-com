@@ -5,8 +5,6 @@ import {ui} from 'components';
 import Layout from 'shared/Layout';
 import routes from './routes';
 
-
-
 ui.addViews(require.context('yii-steroids/ui', true, /View.js$/));
 ui.addViews(require.context('./ui', true, /View.js$/));
 
