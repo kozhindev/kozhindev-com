@@ -80,7 +80,7 @@ export default class WavesEffect extends React.Component {
 
         this._animate();
 
-        setTimeout(() => this.setState({isEnable: false}), 2000);
+        //setTimeout(() => this.setState({isEnable: false}), 2000);
     }
 
     componentWillUnmount() {
