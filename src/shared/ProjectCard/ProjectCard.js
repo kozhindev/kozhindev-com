@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
+import ProjectLink from 'shared/ProjectLink';
 import {html} from 'components';
 
 import './ProjectCard.scss';
@@ -10,6 +10,7 @@ const bem = html.bem('ProjectCard');
 export default class ProjectCard extends React.PureComponent {
 
     static propTypes = {
+        project: PropTypes.object,
         name: PropTypes.string,
         title: PropTypes.string,
         description: PropTypes.string,
@@ -17,16 +18,19 @@ export default class ProjectCard extends React.PureComponent {
 
     render() {
         return (
-            <div className={bem.block({name: this.props.name})}>
+            <ProjectLink
+                className={bem.block({name: this.props.project.name})}
+                project={this.props.project}
+            >
                 <div className={bem.element('body')}>
                     <h3 className={bem.element('title')}>
-                        {this.props.title}
+                        {this.props.project.title}
                     </h3>
                     <div className={bem.element('description')}>
-                        {this.props.description}
+                        {this.props.project.description}
                     </div>
                 </div>
-            </div>
+            </ProjectLink>
         );
     }
 
