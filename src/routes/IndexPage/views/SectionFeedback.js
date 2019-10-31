@@ -16,9 +16,9 @@ export default class SectionFeedback extends React.PureComponent {
     render() {
         return (
             <div className={bem.block()}>
-                <div className='container'>
+                <div className='container-fluid'>
                     <div className='row'>
-                        <div className='col-6'>
+                        <div className='col-lg-6 mb-4 mb-lg-0'>
                             <h2>
                                 <span>
                                     05
@@ -45,10 +45,10 @@ export default class SectionFeedback extends React.PureComponent {
                                 ))}
                             </ul>
                         </div>
-                        <div className='col-6 d-flex'>
+                        <div className='col-lg-6 d-flex'>
                             <Form
                                 formId='SectionFeedback'
-                                className={'d-flex flex-column w-100 ml-4'}
+                                className={'d-flex flex-column w-100 ml-0 ml-lg-4'}
                             >
                                 <InputField
                                     attribute='email'
@@ -57,7 +57,7 @@ export default class SectionFeedback extends React.PureComponent {
                                 />
                                 <span className={bem.element('text-field-wrap')}>
                                     <TextField
-                                        attribute='email'
+                                        attribute='text'
                                         placeholder='Хочу обсудить проект...'
                                         className={bem.element('text-field')}
                                     />

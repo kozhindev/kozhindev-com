@@ -1,4 +1,5 @@
 @import "style/variables";
+@import '~bootstrap/scss/mixins/breakpoints';
 
 .SectionGeneral {
   position: relative;
@@ -7,16 +8,10 @@
   height: 100vh;
 
   &__slogan {
-    position: absolute;
-    top: 45%;
-    left: -265px;
     width: 100%;
     text-transform: uppercase;
     z-index: 10;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    margin-top: -125px;
+    margin-top: -60px;
 
     > h1 {
       font-size: 50px;
@@ -25,7 +20,6 @@
       display: inline-block;
       color: #fff;
       margin-bottom: 0;
-      margin-left: -40px;
       line-height: 1.5;
     }
   }
@@ -34,12 +28,22 @@
     position: absolute;
     bottom: 50px;
     left: 50%;
-    margin-left: -100px;
+    transform: translateX(-50%);
     width: 100px;
     height: 100px;
     background: url('../../../static/icon-scroll.svg');
     animation: SectionGeneral-scroll-animation 1.5s ease-in-out infinite;
   }
+
+  @include media-breakpoint-down(sm) {
+    &__slogan {
+      > h1 {
+        font-size: 35px;
+      }
+    }
+  }
+
+
 }
 
 @keyframes SectionGeneral-scroll-animation {
@@ -53,3 +57,5 @@
     bottom: 50px;
   }
 }
+
+

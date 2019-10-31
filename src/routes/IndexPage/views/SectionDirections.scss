@@ -1,4 +1,5 @@
 @import "style/variables";
+@import '~bootstrap/scss/mixins/breakpoints';
 
 .SectionDirections {
   position: relative;
@@ -30,7 +31,7 @@
   }
 
 
-  &__white-list {
+  &__left-listing {
     padding-right: 60px;
 
     .List__title {
@@ -38,7 +39,7 @@
     }
   }
 
-  &__grey-list {
+  &__right-listing {
     padding-left: 40px;
 
     .List__title {
@@ -63,5 +64,27 @@
     z-index: $zindex-dropdown;
   }
 
+
+  @include media-breakpoint-down(lg) {
+
+    &__section-crypto {
+      padding: 23px 0px 26px;
+    }
+
+    &__right-listing,
+    &__left-listing {
+      padding-right: 0px;
+      padding-left: 0px;
+    }
+
+    &__section-api {
+      padding: 0px 0px 50px;
+    }
+
+    &__more-link {
+      bottom: -75px;
+    }
+
+  }
 
 }

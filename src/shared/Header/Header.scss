@@ -13,8 +13,9 @@ $shortEffect: .25s ease-in;
   width: 100%;
   z-index: 10;
 
-  > .container {
-    padding: 25px 0;
+  > .container-fluid {
+    padding-top: 25px;
+    padding-bottom: 25px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -27,8 +28,9 @@ $shortEffect: .25s ease-in;
   }
 
   &_short {
-    > .container {
-      padding: 5px 0;
+    > .container-fluid {
+      padding-top: 5px;
+      padding-bottom: 5px;
     }
 
     #{$root}__bg {
@@ -51,11 +53,6 @@ $shortEffect: .25s ease-in;
       }
     }
 
-    #{$root}__nav-button {
-      > a {
-        padding: 13px 15px;
-      }
-    }
   }
 
   &_mobile-nav-open {
@@ -191,6 +188,8 @@ $shortEffect: .25s ease-in;
 
 
   &__nav > &__nav-button {
+    margin-left: 10px;
+
     > a {
       text-transform: uppercase;
       border-radius: 2px;

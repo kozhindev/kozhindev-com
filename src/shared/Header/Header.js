@@ -104,7 +104,7 @@ export default class Header extends React.PureComponent {
                 <div className={bem.element('bg')}>
                     <ColorBackground/>
                 </div>
-                <div className='container'>
+                <div className='container-fluid'>
                     <Link
                         className={bem.element('logo')}
                         to={'/'}
@@ -125,7 +125,7 @@ export default class Header extends React.PureComponent {
                     <div className={bem.element('mobile-nav-bg')}>
                         <ColorBackground/>
                     </div>
-                    <div className={'container'}>
+                    <div className={'container-fluid'}>
                         {this._renderMobileNav()}
                     </div>
                 </div>

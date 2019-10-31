@@ -84,7 +84,7 @@ export default class SectionDirections extends React.PureComponent {
         return (
             <div className={bem.block()}>
                 <section className={bem.element('section-crypto')}>
-                    <div className='container'>
+                    <div className='container-fluid'>
                         <h2 className={bem.element('h2')}>
                             <span>
                                 02
@@ -92,9 +92,9 @@ export default class SectionDirections extends React.PureComponent {
                             Что делаем?
                         </h2>
                         <div className='row'>
-                            <div className='col-lg-7'>
+                            <div className='col-lg-7 mb-4 mb-lg-0'>
                                 <List
-                                    className={bem.element('white-list')}
+                                    className={bem.element('left-listing')}
                                     list={CRYPTO}
                                 />
                             </div>
@@ -115,9 +115,9 @@ export default class SectionDirections extends React.PureComponent {
                 </section>
                 <div className={bem.element('bg')}>
                     <section className={bem.element('section-sites')}>
-                        <div className='container'>
+                        <div className='container-fluid'>
                             <div className='row'>
-                                <div className='col-lg-5'>
+                                <div className='col-lg-5 order-1 order-lg-0'>
                                     <ProjectCard
                                         name='helponclick'
                                         title='HelpOnClick'
@@ -134,9 +134,9 @@ export default class SectionDirections extends React.PureComponent {
                                         description='Читайте интересные новеллы и ранобэ'
                                     />
                                 </div>
-                                <div className='col-lg-7'>
+                                <div className='col-lg-7 mb-4 mb-lg-0 order-0 order-lg-1'>
                                     <List
-                                        className={bem.element('grey-list')}
+                                        className={bem.element('right-listing')}
                                         list={SITES}
                                     />
                                 </div>
@@ -145,11 +145,11 @@ export default class SectionDirections extends React.PureComponent {
                     </section>
                 </div>
                 <section className={bem.element('section-api')}>
-                    <div className='container'>
+                    <div className='container-fluid'>
                         <div className='row'>
-                            <div className='col-lg-7'>
+                            <div className='col-lg-7 mb-4 mb-lg-0'>
                                 <List
-                                    className={bem.element('white-list')}
+                                    className={bem.element('left-listing')}
                                     list={API}
                                 />
                             </div>

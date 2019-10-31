@@ -49,9 +49,9 @@ export default class SectionOpenSource extends React.PureComponent {
     render() {
         return (
             <div className={bem.block()}>
-                <div className='container'>
+                <div className='container-fluid'>
                     <div className='row'>
-                        <div className='col-lg-6'>
+                        <div className='col-lg-6 mb-4 mb-lg-0'>
                             <h2>
                                 <span>
                                     03

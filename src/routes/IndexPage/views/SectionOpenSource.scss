@@ -1,4 +1,5 @@
 @import "style/variables";
+@import '~bootstrap/scss/mixins/breakpoints';
 
 .SectionOpenSource {
   position: relative;
@@ -14,8 +15,6 @@
   &__description {
     color: #ffffff;
   }
-
-
 
   &__github-link {
     margin-bottom: 35px;
@@ -67,5 +66,12 @@
     }
   }
 
+  @include media-breakpoint-down(lg) {
+    padding: 50px 0px 20px;
+
+    &__list {
+      padding: 0px;
+    }
+  }
 
 }

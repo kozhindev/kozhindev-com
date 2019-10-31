@@ -11,7 +11,7 @@ export default class TechnologiesPage extends React.PureComponent {
     render() {
         return (
             <div className={bem.block()}>
-                <div className='container'>
+                <div className='container-fluid'>
                     <h1>
                         {__('Технологии')}
                     </h1>

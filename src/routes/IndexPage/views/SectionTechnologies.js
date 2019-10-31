@@ -11,7 +11,7 @@ export default class SectionTechnologies extends React.PureComponent {
     render() {
         return (
             <div className={bem.block()}>
-                <div className='container'>
+                <div className='container-fluid'>
                     <h2>
                         <span>
                             04
@@ -56,7 +56,7 @@ export default class SectionTechnologies extends React.PureComponent {
                                 ])}
                             </p>
                         </div>
-                        <div className={bem.element('cart ')}>
+                        <div className={bem(bem.element('cart'))}>
                             <h3 className={bem.element('cart-title')}>
                                 Mobile & Desktop
                             </h3>

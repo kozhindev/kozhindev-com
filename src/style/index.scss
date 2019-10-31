@@ -1,8 +1,31 @@
 @import './bootstrap/bootstrap';
 @import './fonts';
+@import './variables';
 
 html {
   position: relative;
   height: 100%;
   font-size: 18px;
+}
+
+.container-fluid {
+  max-width: 1164px;
+}
+
+@media screen and (max-width: 991px) {
+  .container-fluid {
+    padding-right: $mobile-gutters;
+    padding-left: $mobile-gutters;
+  }
+
+  .row {
+    margin-left: -$mobile-gutters;
+    margin-right: -$mobile-gutters;
+  }
+
+  [class^='col'] {
+    padding-right: $mobile-gutters;
+    padding-left: $mobile-gutters;
+  }
+
 }

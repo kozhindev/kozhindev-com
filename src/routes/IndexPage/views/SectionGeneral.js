@@ -13,6 +13,7 @@ export default class SectionGeneral extends React.PureComponent {
     render() {
         return (
             <div className={bem.block()}>
+                <div className={'container-fluid d-flex align-items-center h-100'}>
                 <ColorBackground/>
                 <WavesEffect/>
                 <div className={bem.element('slogan')}>
@@ -26,6 +27,7 @@ export default class SectionGeneral extends React.PureComponent {
                     href='#'
                     className={bem.element('scroll-link')}
                 />
+                </div>
             </div>
         );
     }
