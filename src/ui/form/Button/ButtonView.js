@@ -108,6 +108,8 @@ export default class ButtonView extends React.PureComponent {
 
         return bem(
             bem.block({
+                btn: !this.props.link,
+                link: this.props.link,
                 color: this.props.color,
                 outline: this.props.outline,
                 size: this.props.size,
@@ -116,10 +118,7 @@ export default class ButtonView extends React.PureComponent {
                 'is-loading': this.props.isLoading,
                 ...modifiers,
             }),
-            this.props.className,
-            this.props.size && 'btn-' + this.props.size,
-            this.props.block && 'btn-block',
-            this.props.link && 'btn-link',
+            this.props.className
         );
     }
 }

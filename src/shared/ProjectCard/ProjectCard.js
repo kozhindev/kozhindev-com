@@ -12,14 +12,12 @@ export default class ProjectCard extends React.PureComponent {
     static propTypes = {
         project: PropTypes.object,
         name: PropTypes.string,
-        title: PropTypes.string,
-        description: PropTypes.string,
     };
 
     render() {
         return (
             <ProjectLink
-                className={bem.block({name: this.props.project.name})}
+                className={bem.block({name: this.props.name})}
                 project={this.props.project}
             >
                 <div className={bem.element('body')}>

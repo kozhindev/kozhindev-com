@@ -4,9 +4,15 @@
 
 html {
   position: relative;
-  height: 100%;
   font-size: 18px;
 }
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
 
 .container-fluid {
   max-width: 1164px;

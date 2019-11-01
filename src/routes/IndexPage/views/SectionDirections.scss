@@ -33,17 +33,23 @@
 
   &__left-listing {
     padding-right: 60px;
-
-    .List__title {
-      @include title-overlay();
-    }
   }
 
   &__right-listing {
     padding-left: 40px;
+  }
 
-    .List__title {
+  &__listing-title {
+    margin-bottom: 30px;
+
+    &_left {
+      @include title-overlay();
+      margin-right: 60px;
+    }
+
+    &_right {
       @include title-overlay($white);
+      margin-left: 40px;
     }
   }
 
@@ -75,6 +81,15 @@
     &__left-listing {
       padding-right: 0px;
       padding-left: 0px;
+    }
+
+    &__listing-title {
+      &_left,
+      &_right {
+        margin-right: 0px;
+        margin-left: 0px;
+      }
+
     }
 
     &__section-api {

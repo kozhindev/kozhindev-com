@@ -10,47 +10,56 @@ const bem = html.bem('List');
 
 export default class List extends React.PureComponent {
     static propTypes = {
-        list: PropTypes.object,
+        list: PropTypes.array,
         className: PropTypes.string
     };
+
+    renderTitlingItem(item) {
+        return (
+            <>
+                {item.href
+                    ? (
+                        <a
+                            className={bem.element('item-title', 'link')}
+                            target={'_blank'}
+                            href={item.href}
+                        >
+                            {item.title || item.href}
+                        </a>
+                    )
+                    : (
+                        <span className={bem.element('item-title')}>
+                            {item.title}
+                        </span>
+                    )
+                }
+                <p className={bem.element('item-description')}>
+                    {item.description}
+                </p>
+            </>
+        )
+    }
 
     render() {
         return (
             <div className={bem(bem.block(), this.props.className)}>
-                {this.props.list.title && (
-                    <h3 className={bem.element('title')}>
-                        {this.props.list.title}
-                    </h3>
-                )}
                 <ul className={bem.element('text')}>
-                    {this.props.list.items.map((item, index) => (
+                    {this.props.list.map((item, index) => (
                         <li
                             className={bem.element('item')}
                             key={index}
                         >
                             <span className={bem.element('point')}>{'—'}</span>
                             <div>
-                                {item.href
+                                {(typeof item === 'string')
                                     ? (
-                                        <a
-                                            className={bem.element('item-title', 'link')}
-                                            target={'_blank'}
-                                            href={item.href}
-                                        >
-                                            {item.title}
-                                        </a>
+                                        <p className={bem.element('item-description')}>
+                                            {item}
+                                        </p>
                                     )
-                                    : (
-                                        <span className={bem.element('item-title')}>
-                                            {item.title}
-                                        </span>
-                                    )
+                                    : this.renderTitlingItem(item)
                                 }
-                                <p className={bem.element('item-description')}>
-                                    {item.description}
-                                </p>
                             </div>
-
                         </li>
                     ))}
                 </ul>

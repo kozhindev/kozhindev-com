@@ -28,9 +28,6 @@ export default class ModalView extends React.PureComponent {
                 >
                     <div className={bem.element('inner')}>
                         <div className={bem.element('header')}>
-                            <span className={bem.element('title')}>
-                                {this.props.title}
-                            </span>
                             <a
                                 className={bem.element('close')}
                                 href='#'

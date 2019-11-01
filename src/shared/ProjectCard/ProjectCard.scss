@@ -1,12 +1,19 @@
 @import 'style/variables';
 
 .ProjectCard {
+  display: flex;
   position: relative;
   height: 167px;
   overflow: hidden;
   background-size: cover;
   background-position: center;
   box-shadow: 0px 2px 7px 0px rgba(0, 0, 0, 0.2);
+
+
+  &, &:hover {
+    text-decoration: none;
+  }
+
 
   &__body {
     position: relative;
@@ -19,7 +26,7 @@
     width: 100%;
   }
 
-  &::after {
+  &:after {
     position: absolute;
     top: 0;
     left: 0;
@@ -28,12 +35,21 @@
     display: block;
     content: '';
     background: linear-gradient(to top, #000000, transparent);
-    opacity: 0.5;
+    opacity: 0.4;
     z-index: 1;
+    transition: opacity ease-in 0.15s;
+  }
+
+
+  &:hover {
+    &:after {
+      opacity: 0.1;
+    }
   }
 
   &__title {
     @include title-overlay($white);
+    color: #111111;
   }
 
   &__description {
