@@ -59,7 +59,7 @@ export default class SectionOpenSource extends React.PureComponent {
                                 Open-Source
                             </h2>
                             <p className={bem.element('description')}>
-                                Мы создаем open-source решения, накапливая в них лучшие практики и опыт
+                                Мы создаем open-source решения, накапливая в них лучшие практики и опыт.
                                 Переиспользуя код, мы увеличиваем качество и скорость разработки
                             </p>
                             <a
