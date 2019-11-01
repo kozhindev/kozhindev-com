@@ -95,14 +95,8 @@ export default class SectionDirections extends React.PureComponent {
                                 />
                             </div>
                             <div className='col-lg-5'>
-                                <ProjectCard
-                                    name='aliencloud'
-                                    project={projects.find(project => project.id === 'aliencloud')}
-                                />
-                                <ProjectCard
-                                    name='dao'
-                                    project={projects.find(project => project.id === 'waves-dao')}
-                                />
+                                <ProjectCard project={projects.find(project => project.id === 'aliencloud')}/>
+                                <ProjectCard project={projects.find(project => project.id === 'waves-dao')}/>
                             </div>
                         </div>
                     </div>
@@ -112,18 +106,9 @@ export default class SectionDirections extends React.PureComponent {
                         <div className='container-fluid'>
                             <div className='row'>
                                 <div className='col-lg-5 order-1 order-lg-0'>
-                                    <ProjectCard
-                                        name='helponclick'
-                                        project={projects.find(project => project.id === 'helponclick-app')}
-                                    />
-                                    <ProjectCard
-                                        name='vindog'
-                                        project={projects.find(project => project.id === 'vindog')}
-                                    />
-                                    <ProjectCard
-                                        name='ranobe'
-                                        project={projects.find(project => project.id === 'ranobe')}
-                                    />
+                                    <ProjectCard project={projects.find(project => project.id === 'helponclick-app')}/>
+                                    <ProjectCard project={projects.find(project => project.id === 'vindog')} />
+                                    <ProjectCard project={projects.find(project => project.id === 'ranobe')} />
                                 </div>
                                 <div className='col-lg-7 mb-4 mb-lg-0 order-0 order-lg-1'>
                                     <h3 className={bem.element('listing-title', 'right')}>
@@ -151,18 +136,9 @@ export default class SectionDirections extends React.PureComponent {
                                 />
                             </div>
                             <div className='col-lg-5'>
-                                <ProjectCard
-                                    name='goldencruises'
-                                    project={projects.find(project => project.id === 'goldencruises')}
-                                />
-                                <ProjectCard
-                                    name='ajaxfilebrowser'
-                                    project={projects.find(project => project.id === 'ithit-ajaxfilebrowser')}
-                                />
-                                <ProjectCard
-                                    name='nda-cargo-transportation'
-                                    project={projects.find(project => project.id === 'hyrrylorry')}
-                                />
+                                <ProjectCard project={projects.find(project => project.id === 'goldencruises')}/>
+                                <ProjectCard project={projects.find(project => project.id === 'ithit-ajaxfilebrowser')}/>
+                                <ProjectCard project={projects.find(project => project.id === 'hyrrylorry')}/>
                             </div>
                         </div>
                         <div className={bem.element('more-link')}>

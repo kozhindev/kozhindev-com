@@ -1,5 +1,13 @@
 @import 'style/variables';
 
 .ProjectsPage {
+  padding: 50px 0px;
 
+  &__project {
+    margin-bottom: 30px;
+  }
+
+  .ProjectCard {
+    height: 270px;
+  }
 }

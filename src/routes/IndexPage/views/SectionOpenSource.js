@@ -73,10 +73,7 @@ export default class SectionOpenSource extends React.PureComponent {
                                     github.com/kozhindev
                                 </span>
                             </a>
-                            <ProjectCard
-                                name='steroids'
-                                project={projects.find(project => project.id === 'yii-steroids')}
-                            />
+                            <ProjectCard project={projects.find(project => project.id === 'yii-steroids')}/>
                         </div>
                         <div className='col-lg-6'>
                             <List
