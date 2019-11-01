@@ -1,8 +1,10 @@
 @import 'style/variables';
+@import '~bootstrap/scss/mixins/breakpoints';
 
 .ContactsPage {
   position: relative;
-  height: calc(100vh - 60px);
+  height: calc(100vh - 134px);
+  min-height: 550px;
 
   &__map-container {
     position: absolute;
@@ -16,14 +18,15 @@
 
   &__content {
     height: 100%;
+    padding-top: 50px;
     position: relative;
     z-index: 2;
-    padding: 50px 0;
     pointer-events: none;
   }
 
   &__card {
-    width: 370px;
+    max-width: 370px;
+    width: 100%;
     background-color: #fff;
     pointer-events: auto;
   }
@@ -64,14 +67,14 @@
   }
 
   &__icons {
-    padding: 0 20px 30px;
+    padding: 0 30px 30px;
     display: flex;
     flex-direction: row;
 
     li {
 
       > a {
-        padding: 10px;
+        margin-right: 20px;
 
         &:hover {
           opacity: .7;
@@ -82,6 +85,38 @@
     img {
       width: 24px;
       height: 24px;
+    }
+
+  }
+
+  @include media-breakpoint-down(sm) {
+    &__content {
+      padding-top: 20px;
+    }
+
+    &__labels {
+      padding: 20px;
+
+      li {
+        padding-bottom: 10px;
+
+        &:last-child {
+          padding-bottom: 0;
+        }
+
+        > a {
+          font-size: 14px;
+        }
+      }
+    }
+
+    &__icons {
+      padding: 0 20px 20px;
+
+      img {
+        width: 20px;
+        height: 20px;
+      }
     }
   }
 }

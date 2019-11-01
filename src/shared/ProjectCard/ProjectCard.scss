@@ -1,11 +1,19 @@
 @import 'style/variables';
 
 .ProjectCard {
+  display: flex;
   position: relative;
   height: 167px;
   overflow: hidden;
   background-size: cover;
   background-position: center;
+  box-shadow: 0px 2px 7px 0px rgba(0, 0, 0, 0.2);
+
+
+  &, &:hover {
+    text-decoration: none;
+  }
+
 
   &__body {
     position: relative;
@@ -18,7 +26,7 @@
     width: 100%;
   }
 
-  &::after {
+  &:after {
     position: absolute;
     top: 0;
     left: 0;
@@ -26,13 +34,22 @@
     bottom: 0;
     display: block;
     content: '';
-    background-size: cover;
-    background-color: rgba(0, 0, 0, 0.2);
+    background: linear-gradient(to top, #000000, transparent);
+    opacity: 0.4;
     z-index: 1;
+    transition: opacity ease-in 0.15s;
+  }
+
+
+  &:hover {
+    &:after {
+      opacity: 0.1;
+    }
   }
 
   &__title {
     @include title-overlay($white);
+    color: #111111;
   }
 
   &__description {
@@ -50,22 +67,22 @@
   &_name_vindog {
     background-image: url('../../static/projects/vindog.jpg');
   }
-  &_name_dao {
+  &_name_waves-dao {
     background-image: url('../../static/projects/dao.jpg');
   }
-  &_name_helponclick {
+  &_name_helponclick-app {
     background-image: url('../../static/projects/helponclick.png');
   }
   &_name_ranobe {
     background-image: url('../../static/projects/ranobe.png');
   }
-  &_name_ajaxfilebrowser {
+  &_name_ithit-ajaxfilebrowser {
     background-image: url('../../static/projects/ajaxfilebrowser.png');
   }
-  &_name_nda-cargo-transportation {
+  &_name_hyrrylorry {
     background-image: url('../../static/projects/nda-cargo-transportation.png');
   }
-  &_name_steroids {
+  &_name_yii-steroids {
     background-image: url('../../static/projects/steroids.png');
   }
 
