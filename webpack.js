@@ -4,7 +4,7 @@ require('yii-steroids/webpack')
         //host: '192.168.0.3',
         baseUrl: '',
         staticPath: '',
-        outputPath: __dirname + '/dist',
+        outputPath: __dirname + '/public',
         sourcePath: __dirname + '/src',
         useHash: true,
 /*        webpack: {

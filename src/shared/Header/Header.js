@@ -30,7 +30,7 @@ export default class Header extends React.PureComponent {
     static propTypes = {
         isRootPage: PropTypes.bool,
         isDesktop: PropTypes.bool,
-        navItems: PropTypes.object,
+        navItems: PropTypes.array,
     };
 
     constructor() {
@@ -110,7 +110,7 @@ export default class Header extends React.PureComponent {
                         className={bem.element('logo')}
                         to={'/'}
                         noStyles
-                        onClick={this.state.isMobileNavOpen && this._onMobileNavToggle}
+                        onClick={this.state.isMobileNavOpen && this._onMobileNavToggle || undefined}
                     >
                         KozhinDev
                     </Link>
@@ -199,7 +199,7 @@ export default class Header extends React.PureComponent {
     }
 
     _onMobileNavToggle() {
-        this.setState({isMobileNavOpen: !this.state.isMobileNavOpen})
+        this.setState({isMobileNavOpen: !this.state.isMobileNavOpen});
     }
 
     _onScroll() {

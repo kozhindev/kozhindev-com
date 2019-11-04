@@ -1,10 +1,87 @@
-// TODO
-// tags[] (backend, frontend, open-source, ..)
-// screens[]
-// imageUrl
-// status
+import _orderBy from 'lodash/orderBy';
 
-export default [
+// TODO
+// tags[] open-source, с нуля,
+
+const tags = [
+    {
+        id: 'open-source',
+        label: __('OpenSource'),
+        color: '#ad1457',
+    },
+    {
+        id: 'spa-react',
+        label: __('SPA React'),
+        color: '#388193',
+    },
+    {
+        id: 'yii2',
+        label: __('Yii2'),
+        color: '#3d7fca',
+    },
+    {
+        id: 'api',
+        label: __('API'),
+        color: '#512DA8',
+    },
+    {
+        id: 'react-native',
+        label: __('React Native'),
+        color: '#388193',
+    },
+    {
+        id: 'cordova',
+        label: __('Cordova'),
+        color: '#546E7A',
+    },
+    {
+        id: 'highload',
+        label: __('High-Load'),
+        color: '#D32F2F',
+    },
+    {
+        id: 'personal-area',
+        label: __('Личный кабинет'),
+        color: '#388E3C',
+    },
+    {
+        id: 'billing',
+        label: __('Биллинг'),
+        color: '#FF8F00',
+    },
+    {
+        id: 'crypto',
+        label: __('Криптовалюта'),
+        color: '#7B1FA2',
+    },
+    {
+        id: 'crm',
+        label: __('CRM'),
+        color: '#6D4C41',
+    },
+    {
+        id: 'erp',
+        label: __('ERP'),
+        color: '#6D4C41',
+    },
+    {
+        id: 'saas',
+        label: __('SaaS'),
+        color: '#303F9F',
+    },
+    {
+        id: 'integrations',
+        label: __('Интеграции'),
+        color: '#d8a12a',
+    },
+    {
+        id: 'promo',
+        label: __('Промо-сайты'),
+        color: '#AFB42B',
+    },
+];
+
+let projects = [
     {
         id: 'kozhindev',
         title: __('KozhinDev.com'),
@@ -12,9 +89,17 @@ export default [
         to: '2019-11-01',
         url: 'https://kozhindev.com',
         description: 'Промо сайт нашей компании',
+        tags: [
+            'spa-react',
+            'open-source',
+            'promo',
+        ],
         features: [
             'Проектирование и отрисовка дизайна',
             'SPA приложение на React+Redux',
+        ],
+        screens: [
+            //{label: '', imageUrl: '/projects//',},
         ],
     },
     {
@@ -23,13 +108,27 @@ export default [
         from: '2019-02-01',
         to: 'NOW',
         url: 'https://ранобэ.рф',
+        previewImageUrl: '/projects/ranobe/preview.png',
         description: 'Сервис для создания и чтения ранобэ-книг',
+        tags: [
+            'spa-react',
+            'yii2',
+            'personal-area',
+            'billing',
+            'saas',
+        ],
         features: [
             'PHP Yii2 Backend, SPA React+Redux Frontend',
             'Внутренний биллинг с подписками и оплатами',
             'Оплата через платежные шлюзы Robokassa и NextPay',
             'Защита контента от пиратства',
             'Автоматизация процессов перевода, редактуры и публикации глав',
+        ],
+        screens: [
+            {label: '', imageUrl: '/projects/ranobe/bookdetail.png',},
+            {label: '', imageUrl: '/projects/ranobe/main.png',},
+            {label: '', imageUrl: '/projects/ranobe/price.png',},
+            {label: '', imageUrl: '/projects/ranobe/profile.png',},
         ],
     },
     {
@@ -38,7 +137,18 @@ export default [
         from: '2017-08-01',
         to: '2019-08-01',
         url: 'https://aliencloud.xyz',
+        previewImageUrl: '/projects/aliencloud/preview.jpg',
         description: 'Биржа криптовалют и майнинг платформа',
+        tags: [
+            'yii2',
+            'api',
+            'highload',
+            'personal-area',
+            'billing',
+            'crypto',
+            'crm',
+            'integrations',
+        ],
         features: [
             'Облачный майнинг',
             'Криптовалютная биржа',
@@ -47,17 +157,33 @@ export default [
             'Desktop приложение холодного кошелька для ETH и ETC',
             'iOS/Android приложения',
         ],
+        screens: [
+            {label: '', imageUrl: '/projects/aliencloud/balance.png',},
+            {label: '', imageUrl: '/projects/aliencloud/main.png',},
+            {label: '', imageUrl: '/projects/aliencloud/news.png',},
+            {label: '', imageUrl: '/projects/aliencloud/сompetitions.png',},
+            {label: '', imageUrl: '/projects/aliencloud/сompetitions-details.png',},
+        ],
     },
     {
         id: 'nda-crypto-trade',
-        title: __('[NDA] Криптовалютная биржа'),
+        title: __('Крипто-биржа'),
+        isNDA: true,
         from: '2018-07-01',
         to: '2019-02-01',
         description: 'Бекенд и API для международной биржи криптовалют',
+        tags: [
+            'yii2',
+            'billing',
+            'crypto',
+        ],
         features: [
             'Криптовалютная биржа',
             'Интеграция с блокчейнами и платежными шлюзами',
             'Интеграция с Amazon Cognito',
+        ],
+        screens: [
+            {label: '', imageUrl: '/projects/nda-crypto-trade/trade.png',},
         ],
     },
     {
@@ -66,25 +192,47 @@ export default [
         from: '2018-11-01',
         to: '2019-05-01',
         urL: 'https://hurrylorry.com',
+        previewImageUrl: '/projects/hurrylorry/preview.png',
         description: 'Сервиса для быстрого поиска перевозчиков и грузов',
+        tags: [
+            'yii2',
+            'api',
+            'billing',
+            'integrations',
+        ],
         features: [
             'Backend REST API на PHP Yii2',
             'Swagger документация, генерируемая по коду',
             'Интеграция с Qiwi банком',
             'Двухфакторная авторизация через SMS',
         ],
+        screens: [
+            {label: '', imageUrl: '/projects/hyrrylorry/create.png',},
+            {label: '', imageUrl: '/projects/hyrrylorry/main.png',},
+            {label: '', imageUrl: '/projects/hyrrylorry/offer.png',},
+            {label: '', imageUrl: '/projects/hyrrylorry/registration.png',},
+            {label: '', imageUrl: '/projects/hyrrylorry/search.png',},
+        ],
     },
     {
         id: 'nda-service-job',
-        title: __('[NDA] Сервис подбора вакансий и резюме'),
+        title: __('Сервис поиска работы'),
+        isNDA: true,
         from: '2018-09-01',
         to: '2019-02-01',
         description: 'Разработка фронтенда сервиса подбора вакансий и резюме',
+        tags: [
+            'spa-react',
+            'personal-area',
+        ],
         features: [
             'SPA приложение на React+Redux',
             'Поиск вакансии/резюме с множеством фильтов',
             'Профили компаний, работодателей и соискателей',
             'Библиотека UI компонентов на StoryBook',
+        ],
+        screens: [
+            //{label: '', imageUrl: '/projects//',},
         ],
     },
     {
@@ -93,12 +241,27 @@ export default [
         from: '2017-09-01',
         to: 'NOW',
         url: 'https://goldencruises.es',
+        previewImageUrl: '/projects/goldencruises/preview.jpg',
         description: 'Сервис-агрегатор по поиску и бронированию круизов, отелей, авиа, автомобилей',
+        tags: [
+            'spa-react',
+            'yii2',
+            'api',
+            'personal-area',
+            'billing',
+            'integrations',
+        ],
         features: [
             'Интеграция с мировым агрегатором Amadeus',
             'Интеграция с круизными компаниями и агрегаторами Ist, Costa, MSC, Pullmantur, Mundomar',
             'Обмен данными по протоколу SOAP',
             'Публичное REST API',
+        ],
+        screens: [
+            {label: '', imageUrl: '/projects/goldencruises/company.png',},
+            {label: '', imageUrl: '/projects/goldencruises/contact.png',},
+            {label: '', imageUrl: '/projects/goldencruises/detail.png',},
+            {label: '', imageUrl: '/projects/goldencruises/main.png',},
         ],
     },
     {
@@ -107,13 +270,26 @@ export default [
         from: '2015-07-01',
         to: '2018-09-01',
         // url: 'https://vindog.ru',
+        previewImageUrl: '/projects/vindog/preview.jpg',
         description: 'Поиск автозапчастей и сервисов',
+        tags: [
+            'yii2',
+            'personal-area',
+            'billing',
+            'integrations',
+        ],
         features: [
             'Импорт прайс листов из csv/xlsx/xls/zip/rar/...',
             'Полнотекстовой поиск запчастей средствами Sphinx',
             'Интеграция с базами авто и поиска vin номеров',
             'Личные кабинеты покупателей, продавцов и сервисов',
             'Развертывание через AWS CodeDeploy, масштабирование ресурсов Amazone EC2',
+        ],
+        screens: [
+            {label: '', imageUrl: '/projects/vindog/request-items.jpg',},
+            {label: '', imageUrl: '/projects/vindog/requests-list.jpg',},
+            {label: '', imageUrl: '/projects/vindog/seller-about.jpg',},
+            {label: '', imageUrl: '/projects/vindog/seller-requisites.png',},
         ],
     },
     {
@@ -123,6 +299,10 @@ export default [
         to: 'NOW',
         url: 'https://macon-realty.ru',
         description: 'Сайт консалтинговой компании в сфере недвижимости России',
+        tags: [
+            'spa-react',
+            'yii2',
+        ],
         features: [
             'Импорт данных с предыдущего сайта',
             'Разработка с нуля бекенд и фронтенд',
@@ -131,14 +311,28 @@ export default [
             'SPA приложения публичного сайта и панели администратора на React+Redux',
             'Рендеринг на стороне сервера (SSR)',
         ],
+        screens: [
+            {label: '', imageUrl: '/projects/macon/about_company.png',},
+            {label: '', imageUrl: '/projects/macon/main.png',},
+            {label: '', imageUrl: '/projects/macon/news.png',},
+            {label: '', imageUrl: '/projects/macon/newsdetail.png',},
+            {label: '', imageUrl: '/projects/macon/publication.png',},
+        ],
     },
     {
-        id: 'waves-dao',
+        id: 'ventuary',
         title: __('Waves DAO'),
         from: '2019-06-24',
         to: '2019-10-01',
         url: 'https://ventuary.space',
+        previewImageUrl: '/projects/ventuary/preview.jpg',
         description: 'Краудфандинговая платформа на базе Waves',
+        tags: [
+            'spa-react',
+            'open-source',
+            'crypto',
+            'integrations',
+        ],
         features: [
             'SPA приложение на React+Redux',
             'Интеграция с Waves Keeper для подписывание транзакций в браузере',
@@ -146,19 +340,33 @@ export default [
             'Кеш-сервер данных контракта на NodeJS+Redis',
             'Реалтайм обновление данных по WebSocket',
         ],
+        screens: [
+            {label: '', imageUrl: '/projects/ventuary/landing.png',},
+        ],
     },
     {
-        id: 'waves-neutrino',
+        id: 'neutrino',
         title: __('Neutrino'),
         from: '2019-10-01',
         to: '2019-10-28',
         url: 'http://alpha.neutrino.at',
         description: 'Платформа для создания стейблкоинов на базе контрактов Waves',
+        tags: [
+            'spa-react',
+            'open-source',
+            'crypto',
+        ],
         features: [
             'SPA приложение на React+Redux',
             'Авторизация через Waves Keeper',
             'Работа сразу с пачкой Waves контрактов, реалтайм обновление балансов и данных',
             'Разработка специфичного функционала: Swap, Bonds, Liquidate, RPD, Transfers, Invoices',
+        ],
+        screens: [
+            {label: '', imageUrl: '/projects/neutrino/bonds.png',},
+            {label: '', imageUrl: '/projects/neutrino/generate_usd.png',},
+            {label: '', imageUrl: '/projects/neutrino/main.png',},
+            {label: '', imageUrl: '/projects/neutrino/stacking.png',},
         ],
     },
     {
@@ -168,6 +376,10 @@ export default [
         to: '2019-09-15',
         // url: 'http://dev.bel.gg',
         description: 'Платформа для проведения турниров по играм',
+        tags: [
+            'spa-react',
+            'yii2',
+        ],
         features: [
             'Разработка UI, SPA Frontend, API Backend',
             'Создание и настройка турниров, подсчет результатов и продвижение по турнирной сетке',
@@ -176,18 +388,34 @@ export default [
             'Реалтайм обновление всех данных турнира по WebSocket',
             'Деплой на основе Docker контейнеров и Kubernetes',
         ],
+        screens: [
+            {label: '', imageUrl: '/projects/beleague/main.png',},
+        ],
     },
     {
         id: 'mainstreet',
-        title: __('MainStreet'), // TODO NDA?
+        title: __('MainStreet'),
         from: '2018-06-01',
         to: '2018-08-15',
         description: 'Промо-сайт жилого комплекса',
+        tags: [
+            'spa-react',
+            'promo',
+        ],
         features: [
             'SPA приложение на React+Redux',
             'FullPage навигация',
             'Плавные анимированные переходы между страницами',
             'Экспорт планировок квартир из CRM Profitbase',
+        ],
+        screens: [
+            {label: '', imageUrl: '/projects/mainstreet/american_classic.png',},
+            {label: '', imageUrl: '/projects/mainstreet/apartment.png',},
+            {label: '', imageUrl: '/projects/mainstreet/dark.png',},
+            {label: '', imageUrl: '/projects/mainstreet/light.png',},
+            {label: '', imageUrl: '/projects/mainstreet/menu.gif',},
+            {label: '', imageUrl: '/projects/mainstreet/navigation.gif',},
+            {label: '', imageUrl: '/projects/mainstreet/plan.png',},
         ],
     },
     {
@@ -196,11 +424,18 @@ export default [
         from: '2017-08-18',
         to: '2018-06-05',
         description: 'Доработки парсеров новостей',
+        tags: [
+            'yii2',
+            'integrations',
+        ],
         features: [
             'Дорабатывали парсер на PHP Yii2 с очередями в RabbitMQ',
             'Добавление статистики по собираемой информации за день/неделю/месяц',
             'Подготовка конфигурации проекта для Docker окружения',
             'Рефакторинг кода',
+        ],
+        screens: [
+            //{label: '', imageUrl: '/projects//',},
         ],
     },
     {
@@ -209,12 +444,20 @@ export default [
         from: '2017-04-01',
         to: '2017-06-01',
         description: 'Маркетплейс для VR приложений',
+        tags: [
+            'yii2',
+            'personal-area',
+            'crm',
+        ],
         features: [
             'Каталог игр с описанием',
             'Desktop приложение на Electron',
             'Скачивание игр из приложения с прогрессом загрузки',
             'Защита контента (игр) от распространения',
             'Запуск игр из приложения, сбор статистики',
+        ],
+        screens: [
+            //{label: '', imageUrl: '/projects//',},
         ],
     },
     {
@@ -223,12 +466,20 @@ export default [
         from: '2018-08-22',
         to: '2019-03-04',
         description: 'Визуальный редактор карточек и страниц',
+        tags: [
+            'spa-react',
+        ],
         features: [
             'Drag&Drop перемещения карточек и изменение размеров',
             'Добавление полей форм, переключателей',
             'Автоматизация переходов между карточками через интерфейс',
             'Виждет карточек, внедряемый на сторонний сайт',
             'Создания опросов и тестов, ввод переменных, формул и вычисление значений',
+        ],
+        screens: [
+            {label: '', imageUrl: '/projects/cardeditor/dashboard.png',},
+            {label: '', imageUrl: '/projects/cardeditor/player.png',},
+            {label: '', imageUrl: '/projects/cardeditor/project.png',},
         ],
     },
     {
@@ -238,12 +489,21 @@ export default [
         to: '2016-02-01',
         url: 'https://стриж.рф',
         description: 'Сайт оператора связи «Стриж» (для КБ «ИСКРА»)',
+        tags: [
+            'promo',
+        ],
         features: [
             'Верстка сайта по макетам',
             'Калькулятор тарифов',
             'Карта покрытия с указанием направления до лучшего спутника',
             'Интеграция с личным кабинетом',
             'CMS для управления сайтом APS.NET',
+        ],
+        screens: [
+            {label: '', imageUrl: '/projects/iskra-swift/calculator.png',},
+            {label: '', imageUrl: '/projects/iskra-swift/fare-search.jpg',},
+            {label: '', imageUrl: '/projects/iskra-swift/map.png',},
+            {label: '', imageUrl: '/projects/iskra-swift/start.jpg',},
         ],
     },
     {
@@ -253,6 +513,10 @@ export default [
         to: '2017-07-24',
         url: 'https://bani.by',
         description: 'Поиск и бронирование саун Беларуси',
+        tags: [
+            'spa-react',
+            'personal-area',
+        ],
         features: [
             'SPA приложение на React+Redux',
             'Множество фильтров поиска',
@@ -260,14 +524,23 @@ export default [
             'Поиск по просматриваемой области карты',
             'Личные кабинеты пользователя и владельца',
         ],
+        screens: [
+            {label: '', imageUrl: '/projects/bani-by/add-sauna.png',},
+            {label: '', imageUrl: '/projects/bani-by/main.png',},
+            {label: '', imageUrl: '/projects/bani-by/search.png',},
+        ],
     },
     {
-        id: 'ithit-ajaxfilebrowser',
+        id: 'ajaxfilebrowser',
         title: __('IT-Hit AjaxFileBrowser'),
         from: '2013-05-15',
         to: '2017-05-15',
         url: 'http://ajaxfilebrowser.com',
+        previewImageUrl: '/projects/ajaxfilebrowser/preview.png',
         description: 'Файловый менеджер в браузере, использующий протокол WebDAV',
+        tags: [
+            'integrations',
+        ],
         features: [
             'Создание мобильной версия на jQuery Mobile',
             'Отображение, изменение, скачивание, открытие файлов',
@@ -278,6 +551,13 @@ export default [
             'Оптимизация отображения огромных папок (более 10 000 файлов), в том числе на мобильных телефонах',
             'Кастомизация интерфейса и функционала',
         ],
+        screens: [
+            {label: '', imageUrl: '/projects/ajaxfilebrowser/browser-menu.jpg',},
+            {label: '', imageUrl: '/projects/ajaxfilebrowser/ipad-iphone.png',},
+            {label: '', imageUrl: '/projects/ajaxfilebrowser/mobile-list.jpg',},
+            {label: '', imageUrl: '/projects/ajaxfilebrowser/mobile-thumbnails.jpg',},
+            {label: '', imageUrl: '/projects/ajaxfilebrowser/used-by-companies.png',},
+        ],
     },
     {
         id: 'analog-cian',
@@ -285,11 +565,19 @@ export default [
         from: '2016-08-16',
         to: '2017-03-19',
         description: 'Сервис продажи и аренды недвижимости',
+        tags: [
+            'yii2',
+        ],
         features: [
             'Быстрый поиск с множеством фильтров',
             'Google карты с группировкой точек',
             'Генераторы объявлений (для тестирования)',
             'Добавление объевлений в несколько этапов (wizard)',
+        ],
+        screens: [
+            {label: '', imageUrl: '/projects/analog-cian/blocks.png',},
+            {label: '', imageUrl: '/projects/analog-cian/map.png',},
+            {label: '', imageUrl: '/projects/analog-cian/search-interface.png',},
         ],
     },
     {
@@ -299,10 +587,20 @@ export default [
         to: '2016-11-09',
         url: 'https://yukon.to',
         description: 'Анонимная фриланс биржа на блокчейне',
+        tags: [
+            'spa-react',
+            'personal-area',
+            'crypto',
+        ],
         features: [
             'Доработки SPA приложения на React + Flux',
             'Конструктор договоров',
             'Работа в распределенной команде с бекенд/фронтенд программистами и дизайнером',
+        ],
+        screens: [
+            {label: '', imageUrl: '/projects/yukon/project.png',},
+            {label: '', imageUrl: '/projects/yukon/project-create.png',},
+            {label: '', imageUrl: '/projects/yukon/search.png',},
         ],
     },
     {
@@ -312,10 +610,19 @@ export default [
         to: '2016-12-16',
         url: 'https://ru.doinsta.com',
         description: 'Сервис продвижения в Instagram',
+        tags: [
+            'yii2',
+            'personal-area',
+            'saas',
+            'integrations',
+        ],
         features: [
             'Доработка бекенд части и редизайн',
             'Локализация на три языка',
             'Интерфейс настроек продвижения',
+        ],
+        screens: [
+            {label: '', imageUrl: '/projects/doinsta/main.png',},
         ],
     },
     {
@@ -324,11 +631,21 @@ export default [
         from: '2016-01-29',
         to: '2019-03-31',
         description: 'Конструктор юридических документов',
+        tags: [
+            'yii2',
+            'personal-area',
+        ],
         features: [
             'Загрузка документов из Google Docs',
             'Произвольные поля в шаблонах',
             'Автозаполнение полей по предыдущим данным',
             'Генерация PDF документов',
+        ],
+        screens: [
+            {label: '', imageUrl: '/projects/documents-constructor/document.png',},
+            {label: '', imageUrl: '/projects/documents-constructor/document-fields.png',},
+            {label: '', imageUrl: '/projects/documents-constructor/document-preview.png',},
+            {label: '', imageUrl: '/projects/documents-constructor/legalportal-googledocs.png',},
         ],
     },
     {
@@ -338,6 +655,12 @@ export default [
         to: '2016-08-03',
         url: 'https://effi-clinic.ru',
         description: 'Автоматизация бизнес процессов частной клиники',
+        tags: [
+            'yii2',
+            'crm',
+            'erp',
+            'integrations',
+        ],
         features: [
             'Проработка бизнес процессов записи и обслуживания клиентов',
             'Уведомления и напоминания о приходе пациента, изменения заявок, необходимости перезвонить и т.п.',
@@ -346,6 +669,9 @@ export default [
             'Реалтайм обновление данных между 1С, веб и desktop приложениями',
             'Воспроизведение звука при уведомлении',
         ],
+        screens: [
+            //{label: '', imageUrl: '/projects//',},
+        ],
     },
     {
         id: 'golden-cruise-mobile',
@@ -353,6 +679,10 @@ export default [
         from: '2018-08-22',
         to: 'NOW',
         description: 'Прототип мобильного приложения для GoldenCruises',
+        tags: [
+            'react-native',
+            'personal-area',
+        ],
         features: [
             'Аналог приложения для знакомств на ReactNative',
             'Поиск людей рядом, лайки/дизлайки',
@@ -360,26 +690,41 @@ export default [
             'Авторизация через Email и Facebook',
             'Бекенд на PHP Yii2 и MySQL',
         ],
+        screens: [
+            //{label: '', imageUrl: '/projects//',},
+        ],
     },
     {
         id: 'gs-telegram',
-        title: __('Телеграм бот для «Игра-Сервис»'),
+        title: __('Телеграм бот «Игра-Сервис»'),
         from: '2016-08-20',
         to: '2016-09-01',
         description: 'Телеграм бот для интернет провайдера «Игра-Сервис»',
+        tags: [
+            'integrations',
+        ],
         features: [
             'Телеграм меню для выбора каманды',
             'Привязка аккаунта через подтверждение телефона',
             'Команды получения баланса, кредита, блокировка счета и запроса в техподдержку',
             'Интеграция с внутренним апи провайдера',
         ],
+        screens: [
+            {label: '', imageUrl: '/projects/gs-telegram/telegram.png',},
+        ],
     },
     {
         id: 'maxreforma',
-        title: __('ReFeforma'),
+        title: __('ReForma'),
         from: '2016-11-29',
         to: '2018-04-20',
         description: 'Социальная сеть для людей, занимающихся фитнесом',
+        tags: [
+            'yii2',
+            'personal-area',
+            'billing',
+            'saas',
+        ],
         features: [
             'Биллинг с внутренними покупками и несколькими валютами',
             'Система рейтинга, наград, ачивок и достижений',
@@ -388,19 +733,32 @@ export default [
             'Фитнес программы с конкурсами и голосованиями',
             'Реалтайм обновления всех данных на клиенте',
         ],
+        screens: [
+            //{label: '', imageUrl: '/projects//',},
+        ],
     },
     {
         id: 'medical-ms',
-        title: __('Система управления медицинскими клиниками'),
+        title: __('ERP для клиник'),
         from: '2016-05-20',
         to: '2017-04-06',
-        description: 'ERP и CRM системы для сети медицинских клиник',
+        description: 'ERP и CRM система для сети медицинских клиник',
+        tags: [
+            'yii2',
+            'personal-area',
+            'crm',
+            'erp',
+            'integrations',
+        ],
         features: [
             'Своя CRM клиентов, интегрированная с публичным сайтом',
             'Расписание приема клиентов и времени работы врачей',
             'Управление и контроль склада, автоматический заказ необходимых товаров',
             'Справочники процедур, лекарств, поставщиков, статусов, единиц измерения и т.п.',
             'Будильники и напоминания',
+        ],
+        screens: [
+            //{label: '', imageUrl: '/projects//',},
         ],
     },
     {
@@ -409,7 +767,14 @@ export default [
         from: '2010-09-05',
         to: '2017-09-14',
         url: 'https://www.helponclick.com/',
+        previewImageUrl: '/projects/helponclick-app/preview.png',
         description: 'SaaS сервис Онлайн-консультанта',
+        tags: [
+            'highload',
+            'billing',
+            'saas',
+            'integrations',
+        ],
         features: [
             'HighLoad, горизонтально масштабируемая архитектура',
             '20к аккаунтов, 3к чатов онлайн',
@@ -419,6 +784,27 @@ export default [
             'Тонко настраиваемые скрипты для реагирования виджета на сайте',
             'Инструменты для аналитики и мониторинга',
         ],
+        screens: [
+            {label: '', imageUrl: '/projects/helponclick-app/chat-file.png',},
+            {label: '', imageUrl: '/projects/helponclick-app/chats.jpg',},
+            {label: '', imageUrl: '/projects/helponclick-app/op-attach-file.png',},
+            {label: '', imageUrl: '/projects/helponclick-app/op-icon.png',},
+            {label: '', imageUrl: '/projects/helponclick-app/op-invitation-rules.png',},
+            {label: '', imageUrl: '/projects/helponclick-app/op-monitor.png',},
+            {label: '', imageUrl: '/projects/helponclick-app/op-monitor2.png',},
+            {label: '', imageUrl: '/projects/helponclick-app/op-responses.png',},
+            {label: '', imageUrl: '/projects/helponclick-app/op-settings.png',},
+            {label: '', imageUrl: '/projects/helponclick-app/op-toolbar-code.png',},
+            {label: '', imageUrl: '/projects/helponclick-app/op-toolbar-invite.png',},
+            {label: '', imageUrl: '/projects/helponclick-app/op-virtual-agent.png',},
+            {label: '', imageUrl: '/projects/helponclick-app/op-widget-builder.png',},
+            {label: '', imageUrl: '/projects/helponclick-app/op-widgets.png',},
+            {label: '', imageUrl: '/projects/helponclick-app/visitor-toolbar.png',},
+            {label: '', imageUrl: '/projects/helponclick-app/visitor-widget.png',},
+            {label: '', imageUrl: '/projects/helponclick-app/visitor-widget-collapse.jpg',},
+            {label: '', imageUrl: '/projects/helponclick-app/widget.png',},
+            {label: '', imageUrl: '/projects/helponclick-app/widget-code.png',},
+        ],
     },
     {
         id: 'auto-parser',
@@ -426,11 +812,17 @@ export default [
         from: '2017-07-27',
         to: '2018-03-29',
         description: 'Парсер каталогов автомобильных запчастей',
+        tags: [
+            'yii2',
+        ],
         features: [
             'Многопоточный парсер на очередях и PHP',
             'Поддержка проксирования и авторизации',
             'Объем сохраненных данных - >20 Gb в СУБД PortgreSQL',
             'Автоматические перезапуски парсера в случае неудач',
+        ],
+        screens: [
+            //{label: '', imageUrl: '/projects//',},
         ],
     },
     {
@@ -440,6 +832,11 @@ export default [
         to: 'NOW',
         url: 'https://cashgo.ru',
         description: 'Социальная сеть и многопользовательякая карточкая игра по Кийосаки',
+        tags: [
+            'personal-area',
+            'billing',
+            'saas',
+        ],
         features: [
             'Разработка с нуля и поддержка проекта по сей день',
             'Игры, чаты и приватная переписка в реальном времени',
@@ -448,6 +845,14 @@ export default [
             'Игровые турниры и поединки',
             'Однопользовательская (с ботом) и многопользовательская режимы игр',
         ],
+        screens: [
+            {label: '', imageUrl: '/projects/cashgo/blog.png',},
+            {label: '', imageUrl: '/projects/cashgo/dreams.png',},
+            {label: '', imageUrl: '/projects/cashgo/game-field-adaptive.png',},
+            {label: '', imageUrl: '/projects/cashgo/gameplay.png',},
+            {label: '', imageUrl: '/projects/cashgo/home.png',},
+            {label: '', imageUrl: '/projects/cashgo/join-club.png',},
+        ],
     },
     {
         id: 'cloudhashing',
@@ -455,12 +860,21 @@ export default [
         from: '2018-06-22',
         to: '2019-09-02',
         description: 'Сервис покупки мощностей для облачного майнинга',
+        tags: [
+            'yii2',
+            'personal-area',
+            'billing',
+            'crm',
+        ],
         features: [
             'Внутренний биллинг с ручным пополнением и выводом',
             'Автоматическое начисление наград пользователю от купленной мощности',
             'Верстка лендинга и интерфейсов страниц по макетам',
             'Подгрузка криптовалютных курсов с нескольких источников',
             'Личный кабинет пользователя со статистикой',
+        ],
+        screens: [
+            //{label: '', imageUrl: '/projects//',},
         ],
     },
     {
@@ -470,12 +884,24 @@ export default [
         to: '2017-05-10',
         url: 'https://www.helponclick.com/live-chat-software/downloads.html',
         description: 'Мобильное приложение операторов онлайн-консультанта HelpOnClick',
+        tags: [
+            'cordova',
+            'saas',
+        ],
         features: [
             'Приложение сделано на SenchaTouch и Apache Cordova',
             'Мониторинг посетителей сайта и чаты с ними',
             'Разные версии для планшетов и телефонов',
             'Push Notifications для Android и iOS',
             'Изоморфный код: в мобильной и браузерной версиях используется одно и тоже ядно на JavaScript',
+        ],
+        screens: [
+            {label: '', imageUrl: '/projects/helponclick-mobile/chat.png',},
+            {label: '', imageUrl: '/projects/helponclick-mobile/chat-menu.png',},
+            {label: '', imageUrl: '/projects/helponclick-mobile/home.png',},
+            {label: '', imageUrl: '/projects/helponclick-mobile/login.png',},
+            {label: '', imageUrl: '/projects/helponclick-mobile/monitor.png',},
+            {label: '', imageUrl: '/projects/helponclick-mobile/settings.png',},
         ],
     },
     {
@@ -485,10 +911,17 @@ export default [
         to: '2016-05-25',
         url: 'https://www.helponclick.com/live-chat-software/integration/content-management-systems/wordpress/',
         description: 'Плагин для установки виджета онлайн-консультанта на Wordpress',
+        tags: [
+            'integrations',
+        ],
         features: [
             'Размещение плагина в каталоге Wordpress',
             'Связка с аккаунтом по логину и паролю',
             'Вставка кода виджета через интерфейс панели администратора',
+        ],
+        screens: [
+            {label: '', imageUrl: '/projects/helponclick-wordpress/install.png',},
+            {label: '', imageUrl: '/projects/helponclick-wordpress/connect.png',},
         ],
     },
     {
@@ -498,12 +931,26 @@ export default [
         to: '2017-09-18',
         url: 'https://www.helponclick.com',
         description: 'Промо-сайт онлайн-консультанта HelpOnClick',
+        tags: [
+            'saas',
+            'promo',
+        ],
         features: [
             'Верстка редизайна и лендингов',
             'A-B тестирование',
             'Подписки и прием платежей через Stripe',
             'Калькулятор тарифных планов',
             'Рефакторинг и аналитика биллинга',
+        ],
+        screens: [
+            {label: '', imageUrl: '/projects/helponclick-site/landing-ab.png',},
+            {label: '', imageUrl: '/projects/helponclick-site/landingpage1-here.png',},
+            {label: '', imageUrl: '/projects/helponclick-site/langing-man.png',},
+            {label: '', imageUrl: '/projects/helponclick-site/license-update.png',},
+            {label: '', imageUrl: '/projects/helponclick-site/licenses.png',},
+            {label: '', imageUrl: '/projects/helponclick-site/pricing.jpg',},
+            {label: '', imageUrl: '/projects/helponclick-site/pricing2.jpg',},
+            {label: '', imageUrl: '/projects/helponclick-site/signup.png',},
         ],
     },
     {
@@ -513,9 +960,15 @@ export default [
         to: '2015-04-03',
         url: 'https://www.helponclick.com/live-chat-software/downloads.html',
         description: 'Desktop приложение операторов онлайн-консультанта HelpOnClick',
+        tags: [
+            'saas',
+        ],
         features: [
             'HTML5 приложение на Qt для Windows и MacOS',
             'Всплавающие уведомления',
+        ],
+        screens: [
+            {label: '', imageUrl: '/projects/helponclick-desktop/chat-from-desktop.png',},
         ],
     },
     {
@@ -525,6 +978,9 @@ export default [
         to: '2018-02-20',
         url: 'https://github.com/jiisoft/jii',
         description: 'Open-Source JavaScript MVC фреймворк',
+        tags: [
+            'open-source',
+        ],
         features: [
             'Изоморфный код: фреймворк и приложение могут работать как на сервере, так и в браузере',
             'Портирование ActiveRecord и QueryBuilder из PHP Yii2 на NodeJS',
@@ -534,6 +990,9 @@ export default [
             'Контроллеры для консольных команд',
             'Локализация, React Views, валидаторы, авторизация, много тестов и другое...',
         ],
+        screens: [
+            //{label: '', imageUrl: '/projects//',},
+        ],
     },
     {
         id: 'supporttrio',
@@ -542,11 +1001,19 @@ export default [
         to: '2013-01-28',
         url: 'http://www.supporttrio.com',
         description: 'Доработки платформы службы поддержки',
+        tags: [
+            'saas',
+        ],
         features: [
             'Сервис поставляется как в Saas режиме, так и self-hosted',
             'Техническая поддержка в качестве второй линии',
             'Доработки логики в областях: скрипты автоматизации задач, парсер входящих писем, миграции между версиями...',
             'Обфускация и защита кода от копирования',
+        ],
+        screens: [
+            {label: '', imageUrl: '/projects/supporttrio/automation.gif',},
+            {label: '', imageUrl: '/projects/supporttrio/ticket-view.gif',},
+            {label: '', imageUrl: '/projects/supporttrio/tickets.gif',},
         ],
     },
     {
@@ -555,12 +1022,18 @@ export default [
         from: '2016-05-15',
         to: '2016-06-15',
         description: 'Телеграм бот с привязкой к сообществу Vk',
+        tags: [
+            'integrations',
+        ],
         features: [
             'Переадресация сообщений из сообществ Vk в Telegram',
             'Подключение личных сообщений из профиля в VK',
             'Автоответчик от имени сообщества',
             'Автоответчик от личного профиля',
             'Настройка сообщений автооответа',
+        ],
+        screens: [
+            //{label: '', imageUrl: '/projects//',},
         ],
     },
     {
@@ -569,9 +1042,15 @@ export default [
         from: '2017-03-01',
         to: '2017-04-01',
         description: 'Платежный плагин CloudPayments для CMS Webasyst',
+        tags: [
+            'integrations',
+        ],
         features: [
             'Разработка в рамках Webasyst Plugin API',
             'Интеграция плагина в интернет магазине',
+        ],
+        screens: [
+            {label: '', imageUrl: '/projects/webasyst-cloudpayments/popup.jpg',},
         ],
     },
     {
@@ -581,11 +1060,20 @@ export default [
         to: '2016-01-01',
         url: 'https://www.solostream.com/demo/wp-creative',
         description: 'Премиум темы для CMS Wordpress',
+        tags: [
+            'integrations',
+        ],
         features: [
             'Адаптирование 36 существующих тем',
             'Разработка трех премиум тем на базе Unyson Framework',
             'Сверх-гибкие настройки тем через панель администратора',
             'Публикация и продажа на SoloStream',
+        ],
+        screens: [
+            {label: '', imageUrl: '/projects/wordpress-premium-themes/old-themes.png',},
+            {label: '', imageUrl: '/projects/wordpress-premium-themes/wp-creative.png',},
+            {label: '', imageUrl: '/projects/wordpress-premium-themes/wp-multipurpose.png',},
+            {label: '', imageUrl: '/projects/wordpress-premium-themes/wp-multipurpose-2.jpg',},
         ],
     },
     {
@@ -594,6 +1082,10 @@ export default [
         from: '2012-06-01',
         to: '2015-05-01',
         description: 'Конструктор резюме',
+        tags: [
+            'yii2',
+            'integrations',
+        ],
         features: [
             'Конструктор резюме, основанный на концепции WYSIWYG',
             'Автоматическое сохранение изменений',
@@ -601,50 +1093,96 @@ export default [
             'Одинаковое отображение шаблонов в HTML, MS Word и PDF',
             'Автоматическое распознование произвольно загруженного резюме',
         ],
+        screens: [
+            {label: '', imageUrl: '/projects/resume-club/create-new-popup.png',},
+            {label: '', imageUrl: '/projects/resume-club/login.png',},
+            {label: '', imageUrl: '/projects/resume-club/resume-blank.png',},
+            {label: '', imageUrl: '/projects/resume-club/resume-filled.png',},
+        ],
+    },
+    {
+        id: 'lotodar',
+        title: __('Lotodar'),
+        from: '2015-08-20',
+        to: '2017-01-18',
+        description: 'Продажа лотерейных билетов с конкурсами и партнеркой',
+        tags: [
+            'yii2',
+            'personal-area',
+            'billing',
+            'integrations',
+        ],
+        features: [
+            'Лотереи Complementario, Powerball, EuroMillions, G7',
+            'Пополнение средств через платежный шлюз PayInPayOut',
+            'Партнерская программа (несколько уровней партнеров), начисление % с уровней',
+        ],
+        screens: [
+            {label: '', imageUrl: '/projects/lotodar/tickets-buy.png',},
+            {label: '', imageUrl: '/projects/lotodar/develop.jpg',},
+        ],
     },
     {
         id: 'fileup-core',
-        title: __('fileup-core'),
-        from: '',
-        to: '',
-        url: '',
-        description: '',
+        title: __('FileUp Core'),
+        from: '2016-01-07',
+        to: '2017-08-17',
+        url: 'https://github.com/ExtPoint/fileup-core',
+        description: 'Библиотека для загрузки файлов',
+        tags: [
+            'open-source',
+        ],
         features: [
-            '',
+            'Множественная загрузка файлов с очередью загрузки',
+            'Загрузка директорий',
+            'Прогресс загрузки с рассчетом скорости в времени окончания',
+            'Возможность поставить на паузу и продолжить загрузку',
+            'Нет зависимостей, не использует Flash',
+            'Работает без UI',
+            'Загрузка больших файлов (> 2 Гб), разбивка файла на части',
+            'Поддерживает загрузку через Xhr и Iframe для старых браузеров',
+        ],
+        screens: [
+            {label: '', imageUrl: '/projects/fileup-core/fileup-readme.png',},
         ],
     },
     {
         id: 'yii-steroids',
         title: __('yii-steroids'),
-        from: '',
-        to: '',
-        url: '',
-        description: '',
-        features: [
-            '',
+        from: '2018-01-02',
+        to: 'NOW',
+        url: 'https://github.com/kozhindev/kozhindev-com',
+        previewImageUrl: '/projects/yii-steroids/preview.png',
+        description: 'Расширение функционала PHP Yii2 и набор React компонентов для SPA приложений',
+        tags: [
+            'spa-react',
+            'open-source',
+            'yii2',
         ],
-    },
-    {
-        id: 'test-flussonic',
-        title: __('flussonic'),
-        from: '',
-        to: '',
-        url: '',
-        description: '',
         features: [
-            '',
+            'Вложенное сохранение моделей',
+            'Визуальный генератор мета моделей, форм, контроллеров',
+            'Автосоздание миграций при изменении AR моделей',
+            'Система прав доступа поверх Yii Rbac и интерфейс для их редактирования',
+            'Генерация Swagger документации по коду',
+            'Модуль загрузки файлов с поддержкой AWS S3',
+            'Глобальная карта сайта и генерация из нее хлебных крошек, заголовков страниц и т.п.',
+            'Frontend: экосистема для создания SPA приложений на React+Redux',
+            'Формы, роутинг, навигация, списки, таблицы',
+            'Ui Kit с разделением бизнес логики и слоя отображения, полная кастомизация в проектах',
         ],
-    },
-    {
-        id: 'lotodar',
-        title: __('lotodar'),
-        from: '',
-        to: '',
-        url: '',
-        description: '',
-        features: [
-            '',
+        screens: [
+            {label: '', imageUrl: '/projects/yii-steroids/github.png',},
         ],
     },
 ];
 
+projects = [
+    ..._orderBy(projects.filter(item => item.to === 'NOW'), 'from', 'desc'),
+    ..._orderBy(projects.filter(item => item.to !== 'NOW'), 'to', 'desc'),
+];
+
+export {
+    projects,
+    tags,
+};

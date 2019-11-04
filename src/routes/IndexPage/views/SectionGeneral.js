@@ -14,19 +14,19 @@ export default class SectionGeneral extends React.PureComponent {
         return (
             <div className={bem.block()}>
                 <div className={'container-fluid d-flex align-items-center h-100'}>
-                <ColorBackground/>
-                <WavesEffect/>
-                <div className={bem.element('slogan')}>
-                    <h1>
-                        {__('Создаём')}
-                        <br />{__('сложные')}
-                        <br />{__('веб-приложения')}
-                    </h1>
-                </div>
-                <a
-                    href='#'
-                    className={bem.element('scroll-link')}
-                />
+                    <ColorBackground/>
+                    <WavesEffect/>
+                    <div className={bem.element('slogan')}>
+                        <h1>
+                            {__('Создаём')}
+                            <br/>{__('сложные')}
+                            <br/>{__('веб-приложения')}
+                        </h1>
+                    </div>
+                    <a
+                        href='#'
+                        className={bem.element('scroll-link')}
+                    />
                 </div>
             </div>
         );

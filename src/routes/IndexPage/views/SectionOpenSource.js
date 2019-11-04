@@ -1,10 +1,10 @@
 import React from 'react';
-import List from 'shared/List'
+import List from 'shared/List';
 import {html} from 'components';
 import Icon from 'shared/Icon';
 import './SectionOpenSource.scss';
 import ProjectCard from 'shared/ProjectCard/ProjectCard';
-import projects from 'data/projects';
+import {projects} from 'data/projects';
 const bem = html.bem('SectionOpenSource');
 
 const SITES =  [
@@ -39,8 +39,6 @@ const SITES =  [
         description: 'Преобразование XML -> Array и обратно'
     }
 ];
-
-
 
 export default class SectionOpenSource extends React.PureComponent {
 

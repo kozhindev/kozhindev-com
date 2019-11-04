@@ -20,7 +20,7 @@ const phoneNumber = '+7 950 980 6194';
 export default class Footer extends React.PureComponent {
 
     static propTypes = {
-        navItems: PropTypes.object,
+        navItems: PropTypes.array,
     };
 
     render() {

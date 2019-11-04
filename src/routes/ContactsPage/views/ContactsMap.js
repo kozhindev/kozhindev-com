@@ -1,6 +1,5 @@
 import * as React from 'react';
 import {connect} from 'react-redux';
-import {isTablet} from 'yii-steroids/reducers/screen';
 import {withScriptjs, withGoogleMap, GoogleMap, Marker} from 'react-google-maps';
 
 import iconMap from 'static/icon-map.svg';
@@ -9,8 +8,8 @@ import mapStyles from './mapStyles.json';
 @withScriptjs
 @withGoogleMap
 @connect(
-    state => ({
-        isMobile: window.innerWidth <= 768
+    () => ({
+        isMobile: window.innerWidth <= 768,
     })
 )
 export default class ContactsMap extends React.PureComponent {
@@ -50,6 +49,6 @@ export default class ContactsMap extends React.PureComponent {
                     }}
                 />
             </GoogleMap>
-        )
+        );
     }
 }

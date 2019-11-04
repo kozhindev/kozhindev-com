@@ -2,7 +2,7 @@ import IndexPage from './IndexPage';
 import ContactsPage from 'routes/ContactsPage';
 import TechnologiesPage from 'routes/TechnologiesPage';
 import ProjectsPage from 'routes/ProjectsPage';
-import ProjectPage from 'routes/ProjectPage'
+import ProjectPage from 'routes/ProjectPage';
 
 export const ROUTE_ROOT = 'root';
 export const ROUTE_CONTACTS = 'contacts';

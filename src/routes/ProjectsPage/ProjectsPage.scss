@@ -1,13 +1,15 @@
 @import 'style/variables';
 
 .ProjectsPage {
-  padding: 50px 0px;
+  padding: 50px 0;
+
+  &__year {
+    color: $gray-600;
+    font-size: 18px;
+    margin: 30px 0 15px 0;
+  }
 
   &__project {
     margin-bottom: 30px;
-  }
-
-  .ProjectCard {
-    height: 270px;
   }
 }
