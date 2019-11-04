@@ -6,7 +6,7 @@ Source of the website [kozhindev.com](https://kozhindev.com)
 pm2
 
 ```bash
-pm2 --name=macon --instances=2 --cwd=/var/www/internal-kozhindev-com/www-master --log=../files/node.log start webpack.js -- --ssr --production
+pm2 --name=kozhindev-com --instances=2 --cwd=/var/www/internal-kozhindev-com/www-master --log=../files/node.log start webpack.js -- --ssr --production
 ```
 
 Nginx
