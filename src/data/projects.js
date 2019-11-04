@@ -997,8 +997,8 @@ let projects = [
     {
         id: 'supporttrio',
         title: __('SupportTrio'),
-        from: '2017-07-06',
-        to: '2013-01-28',
+        from: '2013-01-28',
+        to: '2017-07-06',
         url: 'http://www.supporttrio.com',
         description: 'Доработки платформы службы поддержки',
         tags: [

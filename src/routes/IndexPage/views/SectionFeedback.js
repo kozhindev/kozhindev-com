@@ -45,7 +45,7 @@ export default class SectionFeedback extends React.PureComponent {
                                 ))}
                             </ul>
                         </div>
-                        <div className='col-lg-6 d-flex'>
+                        {/*<div className='col-lg-6 d-flex'>
                             <Form
                                 formId='SectionFeedback'
                                 className={'d-flex flex-column w-100 ml-0 ml-lg-4'}
@@ -67,7 +67,7 @@ export default class SectionFeedback extends React.PureComponent {
                                     label='Свяжитесь со мной'
                                 />
                             </Form>
-                        </div>
+                        </div>*/}
                     </div>
                 </div>
             </div>

@@ -158,13 +158,13 @@ export default class Header extends React.PureComponent {
                         {phoneNumber}
                     </a>
                 </li>
-                <li>
+                {/*<li>
                     <Button
                         className={bem.element('nav-btn')}
                         color='primary'
                         label={__('Обсудить проект')}
                     />
-                </li>
+                </li>*/}
             </ul>
         );
     }

@@ -30,7 +30,7 @@ export default class Footer extends React.PureComponent {
                 <div className='container-fluid'>
                     <div className={'row'}>
                         <div className={bem(bem.element('text'), 'col-lg-6')}>
-                            {__('Работаем с 2017 года')}
+                            {__('Работаем с 2010 года')}
                         </div>
                         <ul className={bem(bem.element('nav'), 'col-6 d-none d-lg-flex justify-content-end')}>
                             {this.props.navItems.map(item => (

@@ -5,6 +5,7 @@ import './SectionDirections.scss';
 import ProjectCard from 'shared/ProjectCard/ProjectCard';
 import Button from 'yii-steroids/ui/form/Button';
 import {projects} from 'data/projects';
+import {ROUTE_PROJECTS} from 'routes/index';
 const bem = html.bem('SectionDirections');
 
 const CRYPTO = [
@@ -143,6 +144,7 @@ export default class SectionDirections extends React.PureComponent {
                             <Button
                                 color='primary'
                                 label={__('Больше проектов')}
+                                toRoute={ROUTE_PROJECTS}
                             />
                         </div>
                     </div>
