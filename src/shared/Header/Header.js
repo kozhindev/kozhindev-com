@@ -20,7 +20,7 @@ import Button from 'yii-steroids/ui/form/Button';
 @connect(
     state => ({
         // isDesktop: isDesktop(state),
-        isDesktop: window.innerWidth > 1210,
+        isDesktop: typeof window === 'undefined' || window.innerWidth > 1210,
         isRootPage: getCurrentItemParam(state, 'id') === ROUTE_ROOT,
         navItems: getNavItems(state, ROUTE_ROOT),
     })
