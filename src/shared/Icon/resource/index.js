@@ -1,3 +1,3 @@
 export default {
-    github: require('!svg-inline-loader!./github.svg'),
+    github: '',// TODO require('!svg-inline-loader!./github.svg'),
 };

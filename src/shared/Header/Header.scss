@@ -12,6 +12,8 @@ $shortEffect: .25s ease-in;
   left: 0;
   width: 100%;
   z-index: 10;
+  background-color: #432279;
+  background: linear-gradient(-90deg, #432279, #7f14cc);
 
   > .container-fluid {
     padding-top: 25px;
@@ -87,7 +89,11 @@ $shortEffect: .25s ease-in;
     height: 110px;
     overflow: hidden;
     z-index: 1;
-    transition: height $shortEffect;
+    opacity: 1;
+    transition: height $shortEffect, opacity $shortEffect;
+  }
+  &_short &__bg {
+    opacity: 0;
   }
 
   &__logo {

@@ -1,10 +1,10 @@
 import React from 'react';
-import List from 'shared/List'
+import List from 'shared/List';
 import {html} from 'components';
 import Icon from 'shared/Icon';
 import './SectionOpenSource.scss';
 import ProjectCard from 'shared/ProjectCard/ProjectCard';
-import projects from 'data/projects';
+import {projects} from 'data/projects';
 const bem = html.bem('SectionOpenSource');
 
 const SITES =  [
@@ -40,8 +40,6 @@ const SITES =  [
     }
 ];
 
-
-
 export default class SectionOpenSource extends React.PureComponent {
 
     render() {
@@ -57,7 +55,7 @@ export default class SectionOpenSource extends React.PureComponent {
                                 Open-Source
                             </h2>
                             <p className={bem.element('description')}>
-                                Мы создаем open-source решения, накапливая в них лучшие практики и опыт
+                                Мы создаем open-source решения, накапливая в них лучшие практики и опыт.
                                 Переиспользуя код, мы увеличиваем качество и скорость разработки
                             </p>
                             <a

@@ -2,7 +2,7 @@ import React from 'react';
 import {html} from 'components';
 import './ProjectPage.scss';
 import Project from 'shared/Project';
-import projects from 'data/projects';
+import {projects} from 'data/projects';
 
 const bem = html.bem('ProjectPage');
 

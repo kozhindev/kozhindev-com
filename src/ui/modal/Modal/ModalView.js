@@ -9,9 +9,31 @@ const bem = html.bem('ModalView');
 export default class ModalView extends React.PureComponent {
 
     static propTypes = {
-        onClose: PropTypes.func,
         children: PropTypes.node,
+        onClose: PropTypes.func,
+        onPrev: PropTypes.oneOfType([
+            PropTypes.func,
+            PropTypes.bool,
+        ]),
+        onNext: PropTypes.oneOfType([
+            PropTypes.func,
+            PropTypes.bool,
+        ]),
     };
+
+    constructor() {
+        super(...arguments);
+
+        this._onKeyDown = this._onKeyDown.bind(this);
+    }
+
+    componentDidMount() {
+        window.addEventListener('keydown', this._onKeyDown);
+    }
+
+    componentWillUnmount() {
+        window.removeEventListener('keydown', this._onKeyDown);
+    }
 
     render() {
         return (
@@ -25,7 +47,20 @@ export default class ModalView extends React.PureComponent {
                         bem.element('modal'),
                         this.props.className
                     )}
+                    onRequestClose={this.props.onClose}
                 >
+                    {this.props.onPrev && (
+                        <div
+                            className={bem.element('prev')}
+                            onClick={this.props.onPrev}
+                        />
+                    )}
+                    {this.props.onNext && (
+                        <div
+                            className={bem.element('next')}
+                            onClick={this.props.onNext}
+                        />
+                    )}
                     <div className={bem.element('inner')}>
                         <div className={bem.element('header')}>
                             <a
@@ -46,4 +81,21 @@ export default class ModalView extends React.PureComponent {
         );
     }
 
+    _onKeyDown(e) {
+        switch (e.which) {
+            case 37: // arrow left
+                if (this.props.onPrev) {
+                    e.preventDefault();
+                    this.props.onPrev(e);
+                }
+                break;
+
+            case 39: // arrow right
+                if (this.props.onNext) {
+                    e.preventDefault();
+                    this.props.onNext(e);
+                }
+                break;
+        }
+    }
 }

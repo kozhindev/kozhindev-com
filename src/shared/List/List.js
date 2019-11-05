@@ -1,12 +1,10 @@
 import React from 'react';
-import {html} from 'components';
-
-import './List.scss';
 import PropTypes from 'prop-types';
 
+import {html} from 'components';
+import './List.scss';
 
 const bem = html.bem('List');
-
 
 export default class List extends React.PureComponent {
     static propTypes = {
@@ -37,7 +35,7 @@ export default class List extends React.PureComponent {
                     {item.description}
                 </p>
             </>
-        )
+        );
     }
 
     render() {

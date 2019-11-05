@@ -20,7 +20,7 @@ export default class ContactsPage extends React.PureComponent {
         return (
             <div className={bem.block()}>
                 <ContactMap
-                    googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=AIzaSyDSYz5Nmb8VhhGuqZQNYs0dc4gp4heHEcs"
+                    googleMapURL='https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=AIzaSyDSYz5Nmb8VhhGuqZQNYs0dc4gp4heHEcs'
                     loadingElement={(
                         <div
                             className={bem.element('map-loading')}

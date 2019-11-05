@@ -1,10 +1,10 @@
 import React from 'react';
 import {html} from 'components';
-import List from 'shared/List'
+import List from 'shared/List';
 import './SectionDirections.scss';
 import ProjectCard from 'shared/ProjectCard/ProjectCard';
 import Button from 'yii-steroids/ui/form/Button';
-import projects from 'data/projects';
+import {projects} from 'data/projects';
 const bem = html.bem('SectionDirections');
 
 const CRYPTO = [
@@ -69,8 +69,6 @@ const API = [
     }
 ];
 
-
-
 export default class SectionDirections extends React.PureComponent {
 
     render() {
@@ -96,7 +94,7 @@ export default class SectionDirections extends React.PureComponent {
                             </div>
                             <div className='col-lg-5'>
                                 <ProjectCard project={projects.find(project => project.id === 'aliencloud')}/>
-                                <ProjectCard project={projects.find(project => project.id === 'waves-dao')}/>
+                                <ProjectCard project={projects.find(project => project.id === 'ventuary')}/>
                             </div>
                         </div>
                     </div>
@@ -137,7 +135,7 @@ export default class SectionDirections extends React.PureComponent {
                             </div>
                             <div className='col-lg-5'>
                                 <ProjectCard project={projects.find(project => project.id === 'goldencruises')}/>
-                                <ProjectCard project={projects.find(project => project.id === 'ithit-ajaxfilebrowser')}/>
+                                <ProjectCard project={projects.find(project => project.id === 'ajaxfilebrowser')}/>
                                 <ProjectCard project={projects.find(project => project.id === 'hyrrylorry')}/>
                             </div>
                         </div>

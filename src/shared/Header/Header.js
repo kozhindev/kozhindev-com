@@ -20,7 +20,7 @@ import Button from 'yii-steroids/ui/form/Button';
 @connect(
     state => ({
         // isDesktop: isDesktop(state),
-        isDesktop: window.innerWidth > 1210,
+        isDesktop: typeof window === 'undefined' || window.innerWidth > 1210,
         isRootPage: getCurrentItemParam(state, 'id') === ROUTE_ROOT,
         navItems: getNavItems(state, ROUTE_ROOT),
     })
@@ -30,7 +30,7 @@ export default class Header extends React.PureComponent {
     static propTypes = {
         isRootPage: PropTypes.bool,
         isDesktop: PropTypes.bool,
-        navItems: PropTypes.object,
+        navItems: PropTypes.array,
     };
 
     constructor() {
@@ -110,7 +110,7 @@ export default class Header extends React.PureComponent {
                         className={bem.element('logo')}
                         to={'/'}
                         noStyles
-                        onClick={this.state.isMobileNavOpen && this._onMobileNavToggle}
+                        onClick={this.state.isMobileNavOpen && this._onMobileNavToggle || undefined}
                     >
                         KozhinDev
                     </Link>
@@ -199,7 +199,7 @@ export default class Header extends React.PureComponent {
     }
 
     _onMobileNavToggle() {
-        this.setState({isMobileNavOpen: !this.state.isMobileNavOpen})
+        this.setState({isMobileNavOpen: !this.state.isMobileNavOpen});
     }
 
     _onScroll() {

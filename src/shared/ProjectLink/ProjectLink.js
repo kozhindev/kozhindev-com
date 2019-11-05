@@ -5,8 +5,7 @@ import Link from 'yii-steroids/ui/nav/Link';
 import {openModal} from 'yii-steroids/actions/modal';
 import {getNavUrl} from 'yii-steroids/reducers/navigation';
 import ProjectModal from 'modals/ProjectModal';
-import {ROUTE_PROJECTS_ITEM} from 'routes'
-
+import {ROUTE_PROJECTS_ITEM} from 'routes';
 
 @connect(
     (state, props) => {
@@ -15,7 +14,6 @@ import {ROUTE_PROJECTS_ITEM} from 'routes'
         };
     }
 )
-
 export default class ProjectLink extends React.PureComponent {
 
     static propTypes = {
