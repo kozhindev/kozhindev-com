@@ -7,7 +7,6 @@ import {projects} from 'data/projects';
 import ProjectCard from 'shared/ProjectCard/ProjectCard';
 
 import './ProjectsPage.scss';
-import moment from 'moment';
 
 const bem = html.bem('ProjectsPage');
 

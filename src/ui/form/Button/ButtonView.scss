@@ -39,7 +39,8 @@
       text-transform: uppercase;
       white-space: nowrap;
 
-      &:before {
+      &:before,
+      &:after {
         content: '';
         position: absolute;
         z-index: 1;
@@ -49,9 +50,13 @@
         right: 0;
         display: block;
         border-radius: 2px;
-        background: linear-gradient(to bottom right, #980040, #461873);
-        opacity: 0.35;
-        transition: opacity 0.2s;
+        background: linear-gradient(168deg, #ab197c 25%, #8a238e 85%);
+      }
+
+      &:after {
+        background: linear-gradient(168deg, #921f78 25%, #76288a 85%);
+        opacity: 0;
+        transition: opacity ease 0.25s;
       }
 
       #{$root}__label {
@@ -63,10 +68,11 @@
         outline: none;
         text-decoration: none;
 
-        &:before {
-          opacity: 0.5;
+        &:after {
+          opacity: 1;
         }
       }
+
 
       &:focus {
         outline: none;

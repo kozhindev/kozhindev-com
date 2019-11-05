@@ -5,6 +5,8 @@ import Icon from 'shared/Icon';
 import './SectionOpenSource.scss';
 import ProjectCard from 'shared/ProjectCard/ProjectCard';
 import {projects} from 'data/projects';
+import githubIcon from 'static/icon-github-pink.svg';
+
 const bem = html.bem('SectionOpenSource');
 
 const SITES =  [
@@ -63,8 +65,8 @@ export default class SectionOpenSource extends React.PureComponent {
                                 href='https://github.com/kozhindev'
                                 target='_blank'
                             >
-                                <Icon
-                                    name={'github'}
+                                <img
+                                    src={githubIcon}
                                     className={bem.element('github-icon')}
                                 />
                                 <span>

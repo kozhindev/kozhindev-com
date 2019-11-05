@@ -1,7 +1,7 @@
 @import "style/variables";
 
 .SectionFeedback {
-  $gradient: linear-gradient( 109deg, rgb(70,24,115) 0%, rgb(108,12,97) 60%, rgb(146,0,79) 100%);
+  $gradient: linear-gradient(165deg, #ac0050, #4f1776);
 
   @include bg-skew($gradient);
   margin: 55px 0px 0px;
