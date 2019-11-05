@@ -15,7 +15,6 @@ export default class ProjectsPage extends React.PureComponent {
             return moment(b.from).year() - moment(a.from).year();
         });
 
-        console.log(111, sortedProjects);
         let year = null;
 
         return (
