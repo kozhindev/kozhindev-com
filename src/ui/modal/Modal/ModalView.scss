@@ -1,8 +1,10 @@
 @import 'style/variables';
+@import '~bootstrap/scss/mixins/breakpoints';
 
 $modal-width: 900px;
 
 .ModalView {
+
   &__modal {
     margin: auto;
     border: none;
@@ -26,9 +28,17 @@ $modal-width: 900px;
     padding: 16px;
     background-color: rgba(0, 0, 0, 0.5);
     overflow: auto;
-    -webkit-backdrop-filter: blur(5px);
-    backdrop-filter: blur(5px);
-    box-shadow: none;
+
+    &:after {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      -webkit-backdrop-filter: blur(5px);
+      backdrop-filter: blur(5px);
+    }
   }
 
   &__inner {
@@ -88,45 +98,48 @@ $modal-width: 900px;
     height: 100%;
   }
 
-  &__prev, &__next {
-    position: fixed;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    top: 0;
-    bottom: 0;
-    width: 50%;
-    background: transparent;
-    cursor: pointer;
-    //color: rgba(255, 255, 255, .3);
-    color: red;
 
-    &::after {
-      position: relative;
-      z-index: $zindex-popover;
-      font-size: 120px;
-    }
+  &__arrow {
+    position: fixed;
+    z-index: $zindex-popover;
+    top: 50%;
+    transform: translateY(-50%);
+    width: auto;
+    cursor: pointer;
+    background: transparent;
+    color: rgba(151, 151, 151, 0.3);
+    font-size: 120px;
+
 
     &:hover {
-      color: rgba(255, 255, 255, .9);
+      color: rgba(151, 151, 151, 0.5);
+    }
+
+    &_prev {
+      left: 10%;
+
+      &:after {
+        content: '<';
+      }
+    }
+
+    &_next {
+      right: 10%;
+
+      &:after {
+        content: '>';
+      }
+    }
+
+    @include media-breakpoint-down(sm) {
+      & {
+        font-size: 60px;
+      }
     }
   }
 
-  &__prev {
-    left: 0;
 
-    &::after {
-      content: '<';
-    }
-  }
 
-  &__next {
-    right: 0;
-
-    &::after {
-      content: '>';
-    }
-  }
 }
 
 .ReactModal__Body--open {
@@ -141,3 +154,4 @@ $modal-width: 900px;
 .ReactModal__Overlay--before-close {
   opacity: 0;
 }
+

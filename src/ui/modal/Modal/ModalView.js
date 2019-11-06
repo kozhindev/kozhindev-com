@@ -51,13 +51,13 @@ export default class ModalView extends React.PureComponent {
                 >
                     {this.props.onPrev && (
                         <div
-                            className={bem.element('prev')}
+                            className={bem.element('arrow', 'prev')}
                             onClick={this.props.onPrev}
                         />
                     )}
                     {this.props.onNext && (
                         <div
-                            className={bem.element('next')}
+                            className={bem.element('arrow', 'next')}
                             onClick={this.props.onNext}
                         />
                     )}
