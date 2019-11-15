@@ -10,6 +10,7 @@ import './ProjectsPage.scss';
 
 const bem = html.bem('ProjectsPage');
 
+
 export default class ProjectsPage extends React.PureComponent {
 
     render() {

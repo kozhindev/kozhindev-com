@@ -14,9 +14,7 @@ export default class ProjectPage extends React.PureComponent {
     render() {
         return (
             <div className={bem.block()}>
-                <div className={bem('container-fluid')}>
-                    <Project project={projects.find(item => item.id === this.props.match.params.id)} />
-                </div>
+                <Project project={projects.find(item => item.id === this.props.match.params.id)} />
             </div>
         );
     }

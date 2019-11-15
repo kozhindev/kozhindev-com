@@ -16,29 +16,10 @@
     }
   }
 
-
-
   @media screen and (max-width: 1200px) {
     h2 {
-      margin-left: -15px;
-
-      > span {
-        top: -14px;
-        font-size: 10px;
-        padding-right: 2px;
-      }
+      margin-left: 0px;
     }
   }
 
-  @media screen and (max-width: 991px) {
-    h2 {
-      margin-left: -18px;
-
-      > span {
-        top: -14px;
-        font-size: 10px;
-        padding-right: 5px;
-      }
-    }
-  }
 }

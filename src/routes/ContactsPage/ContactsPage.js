@@ -7,6 +7,7 @@ import githubIcon from 'static/icon-github.svg';
 import vkIcon from 'static/icon-vk.svg';
 import instagramIcon from 'static/icon-instagram.svg';
 
+
 const bem = html.bem('ContactsPage');
 
 export default class ContactsPage extends React.PureComponent {

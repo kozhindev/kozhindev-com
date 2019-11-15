@@ -189,6 +189,7 @@ $shortEffect: .25s ease-in;
     &:hover {
       background-color: rgba(0, 0, 0, .1);
       color: #fff;
+      text-decoration: none;
     }
 
     &_is-active {

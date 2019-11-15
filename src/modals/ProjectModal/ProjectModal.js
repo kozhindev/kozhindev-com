@@ -46,7 +46,7 @@ class ProjectModalInner extends React.PureComponent {
                     }));
                 })}
             >
-                <Project project={this.props.project}/>
+                <Project project={this.props.project} modal/>
             </Modal>
         );
     }
