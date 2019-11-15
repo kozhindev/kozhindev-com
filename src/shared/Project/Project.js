@@ -21,15 +21,16 @@ export default class Project extends React.PureComponent {
         const indexedTags = _keyBy(tags, 'id');
         return (
             <div className={bem.block({
-                    'with-bg': !!this.props.project.previewImageUrl,
-                    'modal': this.props.modal
-                }
-            )}>
+                'with-bg': !!this.props.project.previewImageUrl,
+                'modal': this.props.modal
+            })}>
                 <div
                     className={bem.element('bg')}
-                    style={{backgroundImage: !!this.props.project.previewImageUrl
+                    style={{
+                        backgroundImage: this.props.project.previewImageUrl
                             ? `url(${this.props.project.previewImageUrl})`
-                            : 'none'}}
+                            : 'none'
+                    }}
                 >
                     <div className={bem('container-fluid d-flex align-items-end')}>
                         <h1>{this.props.project.title}</h1>
@@ -54,8 +55,8 @@ export default class Project extends React.PureComponent {
                                         color: indexedTags[tagId].color,
                                     }}
                                 >
-                                {indexedTags[tagId].label}
-                            </span>
+                                    {indexedTags[tagId].label}
+                                </span>
                             ))}
                         </div>
                         {this.props.project.url && (
