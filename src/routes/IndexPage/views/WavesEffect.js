@@ -26,10 +26,10 @@ export default class WavesEffect extends React.Component {
         this._particles = [];
         this._count = 0;
         this._mouseX = 85;
-        this._mouseY = -window.innerHeight / 2;
+        this._mouseY = typeof window !== 'undefined' ? -window.innerHeight / 2 : 0;
 
-        this._windowHalfX = window.innerWidth / 2;
-        this._windowHalfY = window.innerHeight / 2;
+        this._windowHalfX = typeof window !== 'undefined' ? window.innerWidth / 2 : 600;
+        this._windowHalfY = typeof window !== 'undefined' ? window.innerHeight / 2 : 300;
 
         this.SEPARATION = 100;
         this.AMOUNT_X = 100;
