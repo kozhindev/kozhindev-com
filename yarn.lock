@@ -2482,6 +2482,11 @@ core-js@^2.4.0:
   resolved "https://registry.yarnpkg.com/core-js/-/core-js-2.6.9.tgz#6b4b214620c834152e179323727fc19741b084f2"
   integrity sha512-HOpZf6eXmnl7la+cUdMnLvUxKNqLUzJvgIziQ0DiF3JwSImNphIqdGqzj6hIKyX04MmV0poclQ7+wjWvxQyR2A==
 
+core-js@^2.6.10:
+  version "2.6.10"
+  resolved "https://registry.yarnpkg.com/core-js/-/core-js-2.6.10.tgz#8a5b8391f8cc7013da703411ce5b585706300d7f"
+  integrity sha512-I39t74+4t+zau64EN1fE5v2W31Adtc/REhzWN+gWRRXg6WH5qAsZm62DHpQ1+Yhe4047T55jvzz7MUqF/dBBlA==
+
 core-util-is@1.0.2, core-util-is@~1.0.0:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/core-util-is/-/core-util-is-1.0.2.tgz#b5fd54220aa2bc5ab57aab7140c940754503c1a7"
@@ -9702,10 +9707,10 @@ yargs@^7.0.0:
     y18n "^3.2.1"
     yargs-parser "^5.0.0"
 
-yii-steroids@^1.15.25:
-  version "1.15.25"
-  resolved "https://registry.yarnpkg.com/yii-steroids/-/yii-steroids-1.15.25.tgz#acfc083955905440c24d90c86a7fc9c5e3038c57"
-  integrity sha512-lYZwf1V/Lko5qKQVAH3EVX6UImOljbY3O/iJfxLyjeFjTD42/BzyD27ql85IcdA/plXQowYc14llpgiwyJFhvg==
+yii-steroids@^1.15.30:
+  version "1.15.30"
+  resolved "https://registry.yarnpkg.com/yii-steroids/-/yii-steroids-1.15.30.tgz#825a48ea7a0a526cec72069d703f52a5f217d929"
+  integrity sha512-HbBjDzGQDETu0r8t13KXDC46vdlZrbxkVJmyUsglP3l5qPwfhFpMpBBUw2v76LJk/yqLwK06hocTuoj/p0LvbQ==
   dependencies:
     "@babel/core" "7.6.4"
     "@babel/plugin-proposal-class-properties" "^7.5.5"
@@ -9727,6 +9732,7 @@ yii-steroids@^1.15.25:
     bootstrap "^4.3.1"
     cache-loader "^2.0.1"
     connected-react-router "^6.5.2"
+    core-js "^2.6.10"
     css-hot-loader "^1.4.4"
     css-loader "^1.0.0"
     domready "^1.0.8"

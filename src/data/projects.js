@@ -158,8 +158,9 @@ let projects = [
             'iOS/Android приложения',
         ],
         screens: [
-            {label: '', imageUrl: '/projects/aliencloud/balance.png',},
+            {label: '', imageUrl: '/projects/aliencloud/trade.png',},
             {label: '', imageUrl: '/projects/aliencloud/main.png',},
+            {label: '', imageUrl: '/projects/aliencloud/balance.png',},
             {label: '', imageUrl: '/projects/aliencloud/news.png',},
             {label: '', imageUrl: '/projects/aliencloud/сompetitions.png',},
             {label: '', imageUrl: '/projects/aliencloud/сompetitions-details.png',},
