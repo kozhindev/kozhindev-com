@@ -1152,7 +1152,7 @@ let projects = [
         title: __('yii-steroids'),
         from: '2018-01-02',
         to: 'NOW',
-        url: 'https://github.com/kozhindev/kozhindev-com',
+        url: 'https://github.com/kozhindev/yii-steroids',
         previewImageUrl: '/projects/yii-steroids/preview.png',
         description: 'Расширение функционала PHP Yii2 и набор React компонентов для SPA приложений',
         tags: [

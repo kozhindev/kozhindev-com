@@ -9707,10 +9707,10 @@ yargs@^7.0.0:
     y18n "^3.2.1"
     yargs-parser "^5.0.0"
 
-yii-steroids@^1.15.30:
-  version "1.15.30"
-  resolved "https://registry.yarnpkg.com/yii-steroids/-/yii-steroids-1.15.30.tgz#825a48ea7a0a526cec72069d703f52a5f217d929"
-  integrity sha512-HbBjDzGQDETu0r8t13KXDC46vdlZrbxkVJmyUsglP3l5qPwfhFpMpBBUw2v76LJk/yqLwK06hocTuoj/p0LvbQ==
+yii-steroids@^1.15.66:
+  version "1.15.66"
+  resolved "https://registry.yarnpkg.com/yii-steroids/-/yii-steroids-1.15.66.tgz#78f0efe95263d624731815617741bfe606dab485"
+  integrity sha512-jhR5sTLCWoX8Vaf0dVnK0L9uhQw9W7rs5kckZAtjP/oTzctB0TT2+cH1fa3OWvrla0nG4vVTdsQ/l26ZXIVETw==
   dependencies:
     "@babel/core" "7.6.4"
     "@babel/plugin-proposal-class-properties" "^7.5.5"
